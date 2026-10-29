@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>NammaBhasha (ನಮ್ಮ ಭಾಷೆ) | Comprehensive Situational Kannada Portal</title>
+  <meta name="description" content="A comprehensive, context-aware situational Kannada learning and real-time live assistance platform. Master what to say next with three-way phrase cards, sentence builder, survival toolkit, and dialogue roleplay.">
+  <meta name="theme-color" content="#080c16">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="apple-touch-icon" href="logo.jpg">
+
+  <!-- Modern Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand" aria-label="NammaBhasha Home">
+        <img src="logo.jpg" alt="NammaBhasha Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>NammaBhasha <span class="brand-kannada-sub">ನಮ್ಮ ಭಾಷೆ</span></h1>
+          <span class="brand-tagline">Real-Life Situational Kannada</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab-btn visual-nav-btn active" data-view="visual" role="tab" aria-selected="true">
+          <i class="fa-solid fa-hand-pointer" style="color: #34d399;"></i>
+          <span>ಚಿತ್ರ ಭಾಷೆ (Tap to Talk)</span>
+        </button>
+        <button class="nav-tab-btn" data-view="phrases" role="tab" aria-selected="false">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Situations</span>
+        </button>
+        <button class="nav-tab-btn" data-view="builder" role="tab" aria-selected="false">
+          <i class="fa-solid fa-puzzle-piece"></i>
+          <span>Sentence Builder</span>
+        </button>
+        <button class="nav-tab-btn" data-view="toolkit" role="tab" aria-selected="false">
+          <i class="fa-solid fa-toolbox"></i>
+          <span>Survival Toolkit</span>
+        </button>
+        <button class="nav-tab-btn" data-view="slang" role="tab" aria-selected="false">
+          <i class="fa-solid fa-fire"></i>
+          <span>Bangalore Slang</span>
+        </button>
+        <button class="nav-tab-btn" data-view="simulator" role="tab" aria-selected="false">
+          <i class="fa-solid fa-comments"></i>
+          <span>What to Say Next</span>
+        </button>
+        <button class="nav-tab-btn practice-nav-btn" data-view="practice" role="tab" aria-selected="false">
+          <i class="fa-solid fa-microphone-lines" style="color: #f43f5e;"></i>
+          <span>ಧ್ವನಿ ಲ್ಯಾಬ್ (Speech Practice)</span>
+        </button>
+        <button class="nav-tab-btn" data-view="quiz" role="tab" aria-selected="false">
+          <i class="fa-solid fa-trophy"></i>
+          <span>Quiz Arena</span>
+        </button>
+      </nav>
+
+      <!-- Nav Actions (Export, Favourites, SOS, Visual Mode, Voice Guide) -->
+      <div class="nav-actions">
+        <button class="btn-voice-guide" id="btnAudioGuide" title="Hear how to use this platform in spoken Kannada" aria-label="Spoken Guide">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>ಧ್ವನಿ ಮಾರ್ಗದರ್ಶಿ</span>
+        </button>
+        <button class="icon-btn-ghost" id="btnExportGuide" title="Print Pocket Cheat Sheet" aria-label="Print Pocket Cheat Sheet">
+          <i class="fa-solid fa-print"></i>
+        </button>
+        <button class="icon-btn-ghost" id="btnOpenFavorites" title="View Saved Favourites" aria-label="View Saved Favourites">
+          <i class="fa-solid fa-heart" style="color: #f43f5e; font-size: 1.15rem;"></i>
+        </button>
+        <button class="sos-quick-btn" id="sosQuickBtn" aria-label="Quick Help SOS Mode">
+          <i class="fa-solid fa-kit-medical"></i>
+          <span>SOS Help</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-pill">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Designed for Anyone with Zero Prior Knowledge • 100% Offline PWA</span>
+        <span class="offline-pill"><span class="dot"></span> Ready</span>
+      </div>
+      <h2 class="hero-title">
+        The Ultimate Guide to <span class="gradient-text">Real-Life Kannada</span>
+      </h2>
+      <p class="hero-desc">
+        Never get stuck again. From hiring an auto at Majestic to ordering hot dosas, negotiating rents, handling medical emergencies, and decoding street slang — NammaBhasha gives you the exact words, phonetic pronunciation, and what to reply next.
+      </p>
+
+      <!-- Live Learning Status Counter -->
+      <div class="learning-stats-bar">
+        <div class="stat-chip">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <span>Verified Phrases: <strong id="statTotalPhrases">--</strong></span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-cubes-stacked"></i>
+          <span>Categories: <strong>10 Situations</strong></span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+          <span>Saved: <strong id="statSavedPhrases">0</strong></span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i>
+          <span>Quiz Score: <strong id="statQuizScore">0 pts</strong></span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-microphone" style="color: #f43f5e;"></i>
+          <span>Practice: <strong id="statPracticeCount">0 sessions</strong></span>
+        </div>
+        <div class="stat-chip backend-chip" id="statBackendStatus" title="Python Flask Backend Status">
+          <i class="fa-solid fa-server" style="color: #38bdf8;"></i>
+          <span>Backend: <strong id="backendStatusText">Connecting...</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 0: VISUAL COMMUNICATOR (ಚಿತ್ರ ಭಾಷೆ - ZERO LITERACY TAP-TO-TALK)
+         ============================================================ -->
+    <section class="view-panel active" id="view-visual">
+      
+      <!-- Voice-First Banner for Non-Readers -->
+      <div class="visual-welcome-banner">
+        <div class="visual-welcome-left">
+          <div class="visual-avatar-pulse">
+            <i class="fa-solid fa-volume-high"></i>
+          </div>
+          <div>
+            <h3>ಓದಲು ಬರೆಯಲು ಕಷ್ಟವೇ? ಚಿತ್ರ ಮುಟ್ಟಿ — ಮೊಬೈಲ್ ಮಾತನಾಡುತ್ತದೆ!</h3>
+            <p>Trouble reading or writing? Touch any picture card — your phone speaks authentic Kannada loudly for you!</p>
+          </div>
+        </div>
+        <button class="visual-listen-guide-btn" id="btnVisualListenGuide">
+          <i class="fa-solid fa-play"></i>
+          <span>ಹೇಗೆ ಬಳಸಬೇಕು ಕೇಳಿ (Hear Guide)</span>
+        </button>
+      </div>
+
+      <!-- Instant 1-Touch Survival Shortcuts for Non-Readers -->
+      <div class="visual-quick-shortcuts" id="visualQuickShortcuts">
+        <div class="quick-shortcuts-header">
+          <i class="fa-solid fa-bolt-lightning" style="color: #fbbf24;"></i>
+          <span>ತಕ್ಷಣದ ಮುಖ್ಯ ಸಹಾಯ (Instant 1-Touch Shortcuts):</span>
+        </div>
+        <div class="quick-shortcuts-grid">
+          <button class="quick-pill-btn qp-auto" data-shortcut="vis_auto" title="ಆಟೋ ಬೇಕು (Hailing Auto)">
+            <span class="qp-icon">🛺</span>
+            <div class="qp-info">
+              <span class="qp-kn">ಆಟೋ ಬೇಕು</span>
+              <span class="qp-en">Auto</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+          <button class="quick-pill-btn qp-coffee" data-shortcut="vis_coffee" title="ಕಾಫಿ ಕೊಡಿ (Coffee)">
+            <span class="qp-icon">☕</span>
+            <div class="qp-info">
+              <span class="qp-kn">ಕಾಫಿ ಕೊಡಿ</span>
+              <span class="qp-en">Coffee</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+          <button class="quick-pill-btn qp-food" data-shortcut="vis_dosa" title="ತಿಂಡಿ ಬೇಕು (Food/Dosa)">
+            <span class="qp-icon">🥞</span>
+            <div class="qp-info">
+              <span class="qp-kn">ತಿಂಡಿ / ದೋಸೆ</span>
+              <span class="qp-en">Food</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+          <button class="quick-pill-btn qp-water" data-shortcut="vis_water" title="ಕುಡಿಯಲು ನೀರು (Water)">
+            <span class="qp-icon">💧</span>
+            <div class="qp-info">
+              <span class="qp-kn">ಕುಡಿಯಲು ನೀರು</span>
+              <span class="qp-en">Water</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+          <button class="quick-pill-btn qp-price" data-shortcut="vis_price" title="ಎಷ್ಟು ರೂಪಾಯಿ? (Price)">
+            <span class="qp-icon">🏷️</span>
+            <div class="qp-info">
+              <span class="qp-kn">ಎಷ್ಟು ಹಣ?</span>
+              <span class="qp-en">Cost</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+          <button class="quick-pill-btn qp-sos" data-shortcut="vis_sos" title="ತುರ್ತು ಸಹಾಯ (Emergency Help)">
+            <span class="qp-icon">🚨</span>
+            <div class="qp-info">
+              <span class="qp-kn">ಸಹಾಯ ಮಾಡಿ!</span>
+              <span class="qp-en">SOS</span>
+            </div>
+            <span class="qp-audio-tag"><i class="fa-solid fa-volume-high"></i></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual Filter Tabs -->
+      <div class="visual-category-bar" id="visualCategoryBar" role="tablist">
+        <button class="visual-cat-btn active" data-vcat="all">
+          <span class="vcat-emoji">🌟</span>
+          <span>ಎಲ್ಲಾ (All)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="travel">
+          <span class="vcat-emoji">🛺</span>
+          <span>ಪ್ರಯಾಣ (Travel)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="food">
+          <span class="vcat-emoji">☕</span>
+          <span>ತಿಂಡಿ & ನೀರು (Food)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="shopping">
+          <span class="vcat-emoji">🛒</span>
+          <span>ಖರೀದಿ & ಹಣ (Market)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="healthcare">
+          <span class="vcat-emoji">🏥</span>
+          <span>ಆಸ್ಪತ್ರೆ & ಮಾತ್ರೆ (Health)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="quickhelp">
+          <span class="vcat-emoji">🚨</span>
+          <span>ತುರ್ತು ಸಹಾಯ (SOS)</span>
+        </button>
+        <button class="visual-cat-btn" data-vcat="social">
+          <span class="vcat-emoji">🤝</span>
+          <span>ದಿನನಿತ್ಯ (Daily)</span>
+        </button>
+      </div>
+
+      <!-- Giant Visual Pictogram Grid -->
+      <div class="visual-cards-grid" id="visualCardsGrid">
+        <!-- Dynamically injected visual cards -->
+      </div>
+
+      <!-- Visual Currency & Cash Counter for Non-Readers -->
+      <div class="visual-cash-register-box">
+        <div class="cash-register-header">
+          <div class="cash-title-wrap">
+            <div class="cash-icon-badge">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+            <div>
+              <h3>ಹಣ ಎಣಿಕೆ & ಧ್ವನಿ ಲೆಕ್ಕ (Visual Rupee Cash Calculator)</h3>
+              <p>Touch currency notes to calculate your fare or market bill without confusion. The phone speaks the total aloud in Kannada!</p>
+            </div>
+          </div>
+          <div class="cash-total-display">
+            <div class="cash-total-label">ಒಟ್ಟು ಮೊತ್ತ (Total Amount):</div>
+            <div class="cash-total-amount" id="cashTotalDisplay">₹ 0 <span class="kannada-num">(₹ ೦)</span></div>
+          </div>
+        </div>
+
+        <!-- Rupee Notes Grid with Banknote Styling, Counters & Minus Button -->
+        <div class="currency-notes-grid">
+          <div class="banknote-card note-10" data-value="10">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೧೦</span>
+              <span class="banknote-count-pill" id="noteCount10">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="10">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹10</div>
+              <div class="banknote-kannada">ಹತ್ತು ರೂಪಾಯಿ (೧೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="10" title="Remove ₹10" aria-label="Remove ₹10">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="10" title="Add ₹10" aria-label="Add ₹10">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="banknote-card note-20" data-value="20">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೨೦</span>
+              <span class="banknote-count-pill" id="noteCount20">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="20">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹20</div>
+              <div class="banknote-kannada">ಇಪ್ಪತ್ತು ರೂಪಾಯಿ (೨೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="20" title="Remove ₹20" aria-label="Remove ₹20">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="20" title="Add ₹20" aria-label="Add ₹20">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="banknote-card note-50" data-value="50">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೫೦</span>
+              <span class="banknote-count-pill" id="noteCount50">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="50">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹50</div>
+              <div class="banknote-kannada">ಐವತ್ತು ರೂಪಾಯಿ (೫೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="50" title="Remove ₹50" aria-label="Remove ₹50">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="50" title="Add ₹50" aria-label="Add ₹50">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="banknote-card note-100" data-value="100">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೧೦೦</span>
+              <span class="banknote-count-pill" id="noteCount100">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="100">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹100</div>
+              <div class="banknote-kannada">ನೂರು ರೂಪಾಯಿ (೧೦೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="100" title="Remove ₹100" aria-label="Remove ₹100">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="100" title="Add ₹100" aria-label="Add ₹100">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="banknote-card note-200" data-value="200">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೨೦೦</span>
+              <span class="banknote-count-pill" id="noteCount200">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="200">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹200</div>
+              <div class="banknote-kannada">ಇನ್ನೂರು ರೂಪಾಯಿ (೨೦೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="200" title="Remove ₹200" aria-label="Remove ₹200">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="200" title="Add ₹200" aria-label="Add ₹200">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="banknote-card note-500" data-value="500">
+            <div class="banknote-header">
+              <span class="banknote-rbi">RBI • ೫೦೦</span>
+              <span class="banknote-count-pill" id="noteCount500">0</span>
+            </div>
+            <div class="banknote-body" data-action="add-card" data-value="500">
+              <div class="banknote-watermark">₹</div>
+              <div class="banknote-val">₹500</div>
+              <div class="banknote-kannada">ಐನೂರು ರೂಪಾಯಿ (೫೦೦)</div>
+            </div>
+            <div class="banknote-footer">
+              <button class="banknote-btn-minus" data-minus="500" title="Remove ₹500" aria-label="Remove ₹500">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button class="banknote-btn-add" data-add="500" title="Add ₹500" aria-label="Add ₹500">
+                <i class="fa-solid fa-plus"></i>
+                <span>ಸೇರಿಸಿ (Add)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cash-actions-bar">
+          <button class="btn-speak-cash-total" id="btnSpeakCashTotal">
+            <i class="fa-solid fa-volume-high"></i>
+            <span>ಒಟ್ಟು ಹಣ ಕೇಳಿ (Hear Total Aloud in Kannada)</span>
+          </button>
+          <button class="btn-clear-cash-total" id="btnClearCashTotal">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>ಕ್ಲಿಯರ್ ಮಾಡಿ (Clear)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 1: SITUATIONAL PHRASES
+         ============================================================ -->
+    <section class="view-panel" id="view-phrases">
+
+      <!-- Daily Phrase Selection Spotlight -->
+      <div class="daily-phrase-card" id="dailyPhraseCard" style="display: none;">
+        <div class="daily-badge">
+          <div class="daily-badge-title">
+            <i class="fa-solid fa-sun" style="color: #fbbf24;"></i>
+            <span>Phrase Spotlight (Backend Phrase Selection)</span>
+          </div>
+          <button class="btn-refresh-daily" id="btnRandomPhrase" title="Select a random phrase via Flask API">
+            <i class="fa-solid fa-shuffle"></i> <span>Surprise Me</span>
+          </button>
+        </div>
+        <div class="daily-main-grid">
+          <div class="daily-phrase-text">
+            <div class="daily-kannada" id="dailyKannada">...</div>
+            <div class="daily-pronounce" id="dailyPronounce">...</div>
+            <div class="daily-english" id="dailyEnglish">...</div>
+          </div>
+          <div class="daily-actions">
+            <button class="btn-audio-play" id="dailyPlayBtn" title="Listen to pronunciation">
+              <i class="fa-solid fa-volume-high"></i> <span>Listen</span>
+            </button>
+            <button class="btn-audio-slow" id="dailySlowBtn" title="Listen slow rate (0.7x)">
+              <i class="fa-solid fa-person-walking"></i> <span>Slow (0.7x)</span>
+            </button>
+            <button class="btn-practice-mic" id="dailyPracticeBtn" title="Test your pronunciation with mic">
+              <i class="fa-solid fa-microphone"></i> <span>Practice</span>
+            </button>
+          </div>
+        </div>
+        <div class="speech-feedback-box" id="feedback-daily"></div>
+      </div>
+      
+      <!-- Real-Time Search Bar -->
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search Kannada script, English, or Romanized (e.g. 'bus', 'dosa', 'eshtu', 'hospital')..." 
+            autocomplete="off"
+            aria-label="Search phrases"
+          >
+          <button class="clear-search-btn" id="clearSearchBtn" title="Clear search" aria-label="Clear search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button class="voice-search-btn" id="voiceSearchBtn" title="Speak to Search (Chrome/Edge)" aria-label="Voice Search">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Situation Category Pill Carousel -->
+      <div class="category-filter-bar" id="categoryFilterBar" role="region" aria-label="Situation Categories">
+        <!-- Dynamically injected category pills -->
+      </div>
+
+      <!-- Category Info Header -->
+      <div class="category-active-header">
+        <div class="category-info">
+          <h2 id="categoryHeaderTitle">All Situations <span class="cat-kannada">(ಎಲ್ಲಾ)</span></h2>
+          <p id="categoryHeaderDesc">Explore all verified everyday Kannada situational phrases with 3-way display and audio.</p>
+        </div>
+        <div class="category-count" id="categoryPhraseCount">-- phrases</div>
+      </div>
+
+      <!-- Three-Way Phrase Cards Grid -->
+      <div class="phrases-grid" id="phrasesGrid">
+        <!-- Dynamically injected phrase cards -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 2: SMART SENTENCE BUILDER (ವಾಕ್ಯ ರಚನೆ)
+         ============================================================ -->
+    <section class="view-panel" id="view-builder">
+      <div class="builder-section">
+        <div class="builder-header">
+          <h2><i class="fa-solid fa-puzzle-piece" style="color: var(--accent-gold); margin-right: 8px;"></i> Smart Sentence Builder (ವಾಕ್ಯ ರಚನೆ)</h2>
+          <p>Zero grammar needed! Construct authentic Kannada phrases in 3 simple clicks. Pick a subject, an object, and an action to see the instant translation, pronunciation, and audio.</p>
+        </div>
+
+        <!-- Live Constructed Phrase Display -->
+        <div class="builder-live-display">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700; margin-bottom: 6px;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Constructed Kannada Phrase:
+          </div>
+          <div class="builder-live-kannada" id="builderLiveKannada">ನನಗೆ ಒಂದು ಕಾಫಿ ಬೇಕು</div>
+          <div class="builder-live-pronounce" id="builderLivePronounce">Nanage ondu coffee beku</div>
+          <div class="builder-live-english" id="builderLiveEnglish">To me / I → One coffee → Want / Needed</div>
+
+          <div class="builder-actions">
+            <button class="btn-audio-play" id="builderPlayBtn" style="max-width: 180px;">
+              <i class="fa-solid fa-volume-high"></i> Listen Audio
+            </button>
+            <button class="btn-audio-slow" id="builderSlowBtn">
+              <i class="fa-solid fa-person-walking"></i> Slow (0.7x)
+            </button>
+            <button class="btn-audio-slow" id="builderShowLocalBtn" style="border-color: var(--accent-gold); color: var(--accent-gold-light);">
+              <i class="fa-solid fa-expand"></i> Show to Local
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-Column Interactive Selector -->
+        <div class="builder-grid">
+          <!-- Column 1: Subject -->
+          <div class="builder-col">
+            <div class="builder-col-title">
+              <i class="fa-solid fa-user"></i> 1. Who (Subject)
+            </div>
+            <div class="builder-tiles-list" id="builderSubjectsList">
+              <!-- Dynamically populated subjects -->
+            </div>
+          </div>
+
+          <!-- Column 2: Object -->
+          <div class="builder-col">
+            <div class="builder-col-title">
+              <i class="fa-solid fa-cube"></i> 2. What (Object)
+            </div>
+            <div class="builder-tiles-list" id="builderObjectsList">
+              <!-- Dynamically populated objects -->
+            </div>
+          </div>
+
+          <!-- Column 3: Action -->
+          <div class="builder-col">
+            <div class="builder-col-title">
+              <i class="fa-solid fa-bolt"></i> 3. Action / Query
+            </div>
+            <div class="builder-tiles-list" id="builderActionsList">
+              <!-- Dynamically populated actions -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 3: SURVIVAL TOOLKIT (ALPHABET & NUMBERS & MAGIC WORDS)
+         ============================================================ -->
+    <!-- ============================================================
+         VIEW 3: TOWN SURVIVAL & TOOLKIT (ಹೊಸಬರ ನಗರ ಸರ್ವೈವಲ್ ಕಿಟ್)
+         ============================================================ -->
+    <section class="view-panel" id="view-toolkit">
+      <div class="toolkit-section">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 6px;">
+            <i class="fa-solid fa-shield-halved" style="color: #f59e0b; margin-right: 8px;"></i>
+            ಹೊಸಬರ ನಗರ ಸರ್ವೈವಲ್ ಕಿಟ್ (Newcomer Town Survival Hub)
+          </h2>
+          <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 0.95rem;">
+            Essential lifelines, street direction commands, auto fare defense, Darshini food ordering, and golden cultural rules to live and thrive in any Karnataka town without knowing Kannada.
+          </p>
+        </div>
+
+        <!-- Sub-Navigation Pills -->
+        <div class="toolkit-subnav" style="justify-content: center;">
+          <button class="toolkit-tab active" data-section="lifelines">
+            <i class="fa-solid fa-life-ring"></i> ನಗರ ಲೈಫ್‌ಲೈನ್ಸ್ (Town Lifelines)
+          </button>
+          <button class="toolkit-tab" data-section="autofare">
+            <i class="fa-solid fa-taxi"></i> ಆಟೋ ಮೀಟರ್ ಶೀಲ್ಡ್ (Auto Fare Shield)
+          </button>
+          <button class="toolkit-tab" data-section="goldenrules">
+            <i class="fa-solid fa-scroll"></i> ೫ ಗೋಲ್ಡನ್ ರೂಲ್ಸ್ (5 Golden Rules)
+          </button>
+          <button class="toolkit-tab" data-section="magic">
+            <i class="fa-solid fa-sparkles"></i> 10 Magic Words
+          </button>
+          <button class="toolkit-tab" data-section="numbers">
+            <i class="fa-solid fa-calculator"></i> Numbers & Money (೧ ೨ ೩)
+          </button>
+          <button class="toolkit-tab" data-section="alphabet">
+            <i class="fa-solid fa-font"></i> Alphabet Soundboard (ಅ ಆ ಇ ಈ)
+          </button>
+        </div>
+
+        <!-- Section 1: Town Survival Lifelines & Compass -->
+        <div class="toolkit-content-sec" id="sec-lifelines">
+          
+          <!-- Quick Direction Voice Compass -->
+          <div class="survival-compass-box">
+            <div class="compass-header">
+              <div class="compass-title">
+                <i class="fa-solid fa-location-crosshairs" style="color: #38bdf8;"></i>
+                <div>
+                  <h4>ದಾರಿ & ಸ್ಟಾಪ್ ಕಮಾಂಡ್ ಪ್ಯಾಡ್ (Street Directions & Stop Commands)</h4>
+                  <p>Loud 1-touch voice commands to direct your driver or navigator with no language struggle.</p>
+                </div>
+              </div>
+            </div>
+            <div class="compass-buttons-grid">
+              <button class="compass-btn btn-stop" data-cmd="stop">
+                <span class="cmd-icon">🛑</span>
+                <span class="cmd-kn">ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ ಅಣ್ಣ!</span>
+                <span class="cmd-en">Stop right here!</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+              <button class="compass-btn btn-straight" data-cmd="straight">
+                <span class="cmd-icon">⬆️</span>
+                <span class="cmd-kn">ನೇರವಾಗಿ ಮುಂದೆ ಹೋಗಿ</span>
+                <span class="cmd-en">Go straight ahead</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+              <button class="compass-btn btn-left" data-cmd="left">
+                <span class="cmd-icon">⬅️</span>
+                <span class="cmd-kn">ಮುಂದೆ ಎಡಗಡೆ ತಿರುಗಿ</span>
+                <span class="cmd-en">Turn left ahead</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+              <button class="compass-btn btn-right" data-cmd="right">
+                <span class="cmd-icon">➡️</span>
+                <span class="cmd-kn">ಮುಂದೆ ಬಲಗಡೆ ತಿರುಗಿ</span>
+                <span class="cmd-en">Turn right ahead</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+              <button class="compass-btn btn-near" data-cmd="distance">
+                <span class="cmd-icon">📍</span>
+                <span class="cmd-kn">ಇಲ್ಲಿಂದ ಎಷ್ಟು ದೂರ?</span>
+                <span class="cmd-en">How far from here?</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+              <button class="compass-btn btn-bus" data-cmd="bus">
+                <span class="cmd-icon">🚏</span>
+                <span class="cmd-kn">ಯಾವ ಬಸ್ ಹೋಗುತ್ತೆ?</span>
+                <span class="cmd-en">Which bus goes?</span>
+                <span class="cmd-audio"><i class="fa-solid fa-volume-high"></i></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Lifelines Filter Carousel -->
+          <div class="survival-filter-bar" id="survivalFilterBar">
+            <button class="survival-cat-pill active" data-cat="all">
+              <span>🌟 ಎಲ್ಲಾ (All Lifelines)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="deescalate">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <span>ವಿವಾದ ನಿವಾರಣೆ (Tension Diffusers)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="directions">
+              <i class="fa-solid fa-compass"></i>
+              <span>ದಾರಿ & ಸ್ಟಾಪ್ (Directions)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="autoshield">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>ಆಟೋ ಮೀಟರ್ (Auto Shield)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="darshini">
+              <i class="fa-solid fa-utensils"></i>
+              <span>ದರ್ಶಿನಿ & ಹೋಟೆಲ್ (Darshini Food)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="market">
+              <i class="fa-solid fa-store"></i>
+              <span>ಅಂಗಡಿ & ಖರೀದಿ (Kirana Market)</span>
+            </button>
+            <button class="survival-cat-pill" data-cat="medical">
+              <i class="fa-solid fa-kit-medical"></i>
+              <span>ಮೆಡಿಕಲ್ & ತುರ್ತು (Medical SOS)</span>
+            </button>
+          </div>
+
+          <!-- Lifelines Cards Dynamic Grid -->
+          <div class="survival-cards-grid" id="survivalCardsGrid">
+            <!-- Dynamically populated from /api/survival/lifelines -->
+          </div>
+        </div>
+
+        <!-- Section 2: Auto Fare Shield & RTO Estimator -->
+        <div class="toolkit-content-sec" id="sec-autofare" style="display: none;">
+          <div class="autofare-box">
+            <div class="autofare-header">
+              <div class="autofare-title-wrap">
+                <div class="autofare-badge-icon">
+                  <i class="fa-solid fa-taxi"></i>
+                </div>
+                <div>
+                  <h3>ಕರ್ನಾಟಕ ಆಟೋ ಮೀಟರ್ ರಕ್ಷಣೆ (Karnataka Auto Fare Shield)</h3>
+                  <p>Calculate official Karnataka RTO fair auto fares to protect yourself from being overcharged. Press the speak button so your phone tells the driver the fair rate in Kannada!</p>
+                </div>
+              </div>
+              <div class="autofare-rto-tag">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Official RTO: ₹30 (first 2 km) • ₹15/km after</span>
+              </div>
+            </div>
+
+            <div class="autofare-body">
+              <div class="autofare-controls">
+                <div class="control-group">
+                  <div class="control-label-row">
+                    <span>ಪ್ರಯಾಣದ ದೂರ (Travel Distance):</span>
+                    <strong id="autoDistanceValue">5.0 km</strong>
+                  </div>
+                  <input type="range" id="autoDistanceRange" min="1.0" max="25.0" step="0.5" value="5.0" class="autofare-slider">
+                  <div class="distance-preset-buttons">
+                    <button class="dist-btn" data-km="2.0">2 km (Min)</button>
+                    <button class="dist-btn active" data-km="5.0">5 km</button>
+                    <button class="dist-btn" data-km="8.0">8 km</button>
+                    <button class="dist-btn" data-km="12.0">12 km</button>
+                    <button class="dist-btn" data-km="18.0">18 km</button>
+                  </div>
+                </div>
+
+                <div class="night-fare-toggle-wrap">
+                  <label class="night-toggle-label">
+                    <input type="checkbox" id="autoNightToggle">
+                    <span class="night-slider"></span>
+                    <span class="night-text">
+                      <strong>ರಾತ್ರಿ ದರ (Night Fare 10 PM - 5 AM)</strong>
+                      <small>Adds standard RTO +50% night-time surcharge</small>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="autofare-result-card">
+                <div class="fare-total-label">ನ್ಯಾಯಸಮ್ಮತ ಅಂದಾಜು ದರ (Estimated Fair Fare):</div>
+                <div class="fare-amount-row">
+                  <span class="fare-amount" id="autoFareAmountDisplay">₹ 75</span>
+                  <span class="fare-kannada-num" id="autoFareKnDigits">(₹ ೭೫)</span>
+                </div>
+                <div class="fare-breakdown" id="autoFareBreakdown">
+                  ₹30 (First 2 km) + 3.0 km × ₹15/km = ₹75
+                </div>
+
+                <div class="fare-speech-preview">
+                  <i class="fa-solid fa-volume-high" style="color: #10b981;"></i>
+                  <span id="autoFareSpeechText">"5 ಕಿಲೋಮೀಟರ್‌ಗೆ ಸುಮಾರು 75 ರೂಪಾಯಿ ಆಗುತ್ತೆ ಸ್ವಾಮಿ."</span>
+                </div>
+
+                <div class="autofare-actions">
+                  <button class="btn-speak-fare" id="btnSpeakAutoFare" title="Speak this fare aloud in Kannada to auto driver">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>ಡ್ರೈವರ್‌ಗೆ ಹೇಳಿ (Speak to Driver)</span>
+                  </button>
+                  <button class="btn-show-fare" id="btnShowAutoFare" title="Show giant fare card to auto driver">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>ಪರದೆ ತೋರಿಸಿ (Show Screen)</span>
+                  </button>
+                  <button class="btn-meter-reminder" id="btnRemindMeter" title="Ask driver: Please put meter">
+                    <i class="fa-solid fa-shield"></i>
+                    <span>"ಮೀಟರ್ ಹಾಕಿ ಸ್ವಾಮಿ"</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: 5 Golden Cultural Rules for Outsiders -->
+        <div class="toolkit-content-sec" id="sec-goldenrules" style="display: none;">
+          <div class="golden-rules-banner">
+            <div class="gr-banner-left">
+              <i class="fa-solid fa-hands-praying" style="color: #fbbf24; font-size: 2.2rem;"></i>
+              <div>
+                <h3>ಕರ್ನಾಟಕ ನಗರ ಸಭ್ಯತೆಯ ೫ ಗೋಲ್ಡನ್ ರೂಲ್ಸ್ (5 Golden Rules for Outsiders)</h3>
+                <p>Simple etiquette habits that prevent 99% of misunderstandings and earn you instant warmth and respect across Karnataka towns.</p>
+              </div>
+            </div>
+            <button class="btn-listen-rules" id="btnListenAllRules">
+              <i class="fa-solid fa-play"></i>
+              <span>ಎಲ್ಲಾ ರೂಲ್ಸ್ ಕೇಳಿ (Hear Rules Audio)</span>
+            </button>
+          </div>
+
+          <div class="golden-rules-grid" id="goldenRulesGrid">
+            <!-- Dynamically populated golden rules -->
+          </div>
+        </div>
+
+        <!-- Section A: 10 Magic Words -->
+        <div class="toolkit-content-sec" id="sec-magic" style="display: none;">
+          <div class="magic-words-grid" id="magicWordsGrid">
+            <!-- Dynamically populated magic words -->
+          </div>
+        </div>
+
+        <!-- Section B: Numbers & Money -->
+        <div class="toolkit-content-sec" id="sec-numbers" style="display: none;">
+          <div class="numbers-grid" id="numbersGrid">
+            <!-- Dynamically populated numbers -->
+          </div>
+        </div>
+
+        <!-- Section C: Alphabet Soundboard -->
+        <div class="toolkit-content-sec" id="sec-alphabet" style="display: none;">
+          <div class="alphabet-grid" id="alphabetGrid">
+            <!-- Dynamically populated letters -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 4: BANGALORE SLANG DECODER (ಬೆಂಗಳೂರು ಕನ್ನಡ)
+         ============================================================ -->
+    <section class="view-panel" id="view-slang">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 6px;">
+          <i class="fa-solid fa-fire" style="color: #38bdf8; margin-right: 8px;"></i>
+          Bangalore Slang & Local Dialect Hub (ಬೆಂಗಳೂರು ಕನ್ನಡ)
+        </h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+          Connect like a true local! Understand iconic street phrases used between friends, auto drivers, cafes, and coworkers across Bengaluru.
+        </p>
+      </div>
+
+      <div class="slang-grid" id="slangGrid">
+        <!-- Dynamically populated slang terms -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 5: WHAT TO SAY NEXT (SIMULATOR)
+         ============================================================ -->
+    <section class="view-panel" id="view-simulator">
+      <div class="simulator-section">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 6px;">
+            <i class="fa-solid fa-comments" style="color: var(--accent-gold); margin-right: 8px;"></i>
+            "What to Say Next" Dialogue Simulator
+          </h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+            Real-life conversations aren't one-sided. Practice branching dialogue exchanges with audio feedback before you hit the street!
+          </p>
+        </div>
+
+        <!-- Scenario Selector Cards -->
+        <div class="scenario-selector-cards" id="scenarioSelectorCards">
+          <!-- Dynamically populated scenario cards -->
+        </div>
+
+        <!-- Simulator Chat Arena -->
+        <div class="simulator-chat-arena">
+          <div class="chat-bubble-wrap" id="simulatorChatHistory">
+            <!-- Dynamically populated speech bubbles -->
+          </div>
+
+          <!-- User Choice Options -->
+          <div class="dialogue-options-box">
+            <div class="dialogue-prompt-title" id="dialoguePromptTitle">
+              <i class="fa-solid fa-reply"></i> Choose what you want to reply:
+            </div>
+            <div class="options-list" id="dialogueOptionsContainer">
+              <!-- Dynamically populated options -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 6: PRACTICE QUIZ ARENA
+         ============================================================ -->
+    <section class="view-panel" id="view-quiz">
+      <div class="quiz-section">
+        <div class="quiz-container">
+          
+          <div id="quizActiveContainer">
+            <div class="quiz-header">
+              <span class="quiz-progress-text" id="quizProgressText">Question 1 of 8</span>
+              <span class="quiz-score-badge" id="quizScoreBadge">0 Points</span>
+            </div>
+
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quizProgressFill"></div>
+            </div>
+
+            <!-- Situation Scenario Context -->
+            <div class="quiz-situation-box">
+              <div class="label"><i class="fa-solid fa-location-dot"></i> Real Situation Context</div>
+              <div class="text" id="quizSituationText">Loading scenario...</div>
+            </div>
+
+            <!-- Question Title -->
+            <h3 class="quiz-question-title" id="quizQuestionTitle">Loading question...</h3>
+
+            <!-- Multiple Choice Options -->
+            <div class="quiz-options-grid" id="quizOptionsGrid">
+              <!-- Dynamic options -->
+            </div>
+
+            <!-- Instant Feedback / Explanation Box -->
+            <div class="quiz-explanation-box" id="quizExplanationBox"></div>
+
+            <!-- Next Button -->
+            <button class="quiz-next-btn" id="quizNextBtn">Next Question</button>
+          </div>
+
+          <!-- Completion / Result Screen -->
+          <div class="quiz-result-view" id="quizResultView">
+            <div class="result-trophy"><i class="fa-solid fa-award"></i></div>
+            <h3 class="result-title">Kannada Scenario Master!</h3>
+            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 8px;">Your Total Score:</p>
+            <div class="result-score-highlight" id="quizFinalScore">120 / 120</div>
+            <p style="color: #cbd5e1; font-size: 0.92rem; max-width: 480px; margin: 0 auto 24px auto;">
+              You have demonstrated practical command over everyday transport, bargaining, polite requests, and emergency communication!
+            </p>
+            <button class="btn-restart-quiz" id="btnRestartQuiz">
+              <i class="fa-solid fa-rotate-right"></i> Play Again
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIEW 7: SPEECH CAPTURE & PRONUNCIATION STUDIO (ಧ್ವನಿ ಲ್ಯಾಬ್)
+         ============================================================ -->
+    <section class="view-panel" id="view-practice">
+      <div class="practice-studio-container">
+        
+        <!-- Practice Header / Banner -->
+        <div class="practice-studio-header">
+          <div class="practice-badge">
+            <i class="fa-solid fa-microphone-lines"></i>
+            <span>Speech Capture & Pronunciation Studio • ಧ್ವನಿ ಅಭ್ಯಾಸ ವೇದಿಕೆ</span>
+          </div>
+          <h2>Master Speaking Kannada with <span class="gradient-text">Real-Time Speech Capture</span></h2>
+          <p>
+            Practice speaking authentic Kannada with your microphone. Our speech capture engine listens in real-time, calculates your accuracy, records your audio, and lets you play your own recording back to compare with native speakers!
+          </p>
+        </div>
+
+        <!-- Practice Arena Card -->
+        <div class="practice-arena-card">
+          <!-- Top Controls: Category & Shuffle -->
+          <div class="practice-controls-row">
+            <div class="practice-select-group">
+              <label for="practiceCategorySelect"><i class="fa-solid fa-layer-group"></i> Practice Topic:</label>
+              <select id="practiceCategorySelect" class="practice-dropdown">
+                <option value="travel">🛺 Travel & Autos (ಪ್ರಯಾಣ)</option>
+                <option value="food">☕ Food & Darshini (ತಿಂಡಿ & ಊಟ)</option>
+                <option value="shopping">🛒 Market & Money (ಖರೀದಿ)</option>
+                <option value="healthcare">🏥 Healthcare & Clinic (ಆರೋಗ್ಯ)</option>
+                <option value="quickhelp">🚨 Emergency & SOS (ತುರ್ತು ಸಹಾಯ)</option>
+                <option value="social">🤝 Daily & Greetings (ದಿನನಿತ್ಯ)</option>
+              </select>
+            </div>
+            
+            <button class="btn-ghost-sm" id="btnNextPracticePhrase">
+              <i class="fa-solid fa-shuffle"></i> <span>Next Challenge</span>
+            </button>
+          </div>
+
+          <!-- Target Phrase Display -->
+          <div class="practice-target-box">
+            <div class="practice-target-badge" id="practiceTopicBadge">Travel • Auto Negotiation</div>
+            <div class="practice-target-kannada" id="practiceTargetKannada">ಮೀಟರ್ ಪ್ರಕಾರ ಬನ್ನಿ ಅಣ್ಣ</div>
+            <div class="practice-target-pronounce" id="practiceTargetPronounce">Mee-ter pra-KAA-ra BAN-ni an-NA</div>
+            <div class="practice-target-english" id="practiceTargetEnglish">Please come by meter, brother</div>
+
+            <!-- Native Audio Controls -->
+            <div class="practice-native-audio-bar">
+              <button class="practice-audio-btn normal" id="btnPracticeListenNormal">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>Listen (1.0x Normal)</span>
+              </button>
+              <button class="practice-audio-btn slow" id="btnPracticeListenSlow">
+                <i class="fa-solid fa-person-walking"></i>
+                <span>Listen (0.7x Slow)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Recording & Speech Capture Zone -->
+          <div class="practice-record-zone">
+            <!-- Audio Visualizer Waves & Central Big Mic -->
+            <div class="practice-visualizer-wrap" id="practiceVisualizerWrap">
+              <div class="mic-wave-ring ring-1"></div>
+              <div class="mic-wave-ring ring-2"></div>
+              <div class="mic-wave-ring ring-3"></div>
+              <button class="big-mic-record-btn" id="btnCaptureSpeech" title="Click to start speech capture">
+                <i class="fa-solid fa-microphone"></i>
+                <span class="mic-btn-label" id="micBtnLabel">ಮಾತನಾಡಿ (Tap to Speak)</span>
+              </button>
+            </div>
+
+            <!-- Status Indicator -->
+            <div class="practice-record-status" id="practiceRecordStatus">
+              <span class="status-dot"></span>
+              <span id="practiceStatusText">Click the microphone button and speak aloud in Kannada.</span>
+            </div>
+
+            <!-- Live Speech Transcript & Results Card -->
+            <div class="practice-transcript-box" id="practiceTranscriptBox" style="display: none;">
+              <div class="transcript-header">
+                <span><i class="fa-solid fa-wave-square"></i> Captured Voice Transcript:</span>
+                <span class="accuracy-badge" id="accuracyScoreBadge">0% Match</span>
+              </div>
+              <div class="transcript-spoken" id="transcriptSpokenText">"..."</div>
+              
+              <!-- Syllable / Word Breakdown -->
+              <div class="transcript-breakdown" id="transcriptBreakdown"></div>
+
+              <!-- Side-by-side Voice Playback (User vs Native) -->
+              <div class="practice-playback-row">
+                <button class="btn-playback-user" id="btnPlayUserVoice" disabled>
+                  <i class="fa-solid fa-circle-play"></i>
+                  <span>Play My Recording</span>
+                </button>
+                <button class="btn-playback-native" id="btnPlayNativeCompare">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Play Native Model</span>
+                </button>
+              </div>
+
+              <!-- Evaluation message -->
+              <div class="practice-evaluation-msg" id="practiceEvaluationMsg"></div>
+            </div>
+          </div>
+
+          <!-- Streak & XP Footer -->
+          <div class="practice-stats-footer">
+            <div class="practice-xp-pill">
+              <i class="fa-solid fa-fire" style="color: #f59e0b;"></i>
+              <span>Total Practice XP: <strong id="practiceTotalXp">0 XP</strong></span>
+            </div>
+            <div class="practice-completed-pill">
+              <i class="fa-solid fa-circle-check" style="color: #34d399;"></i>
+              <span>Practice Sessions: <strong id="practiceMasteredCount">0</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Practice Situation Cards for Non-Readers -->
+        <div class="practice-quick-situations">
+          <div class="quick-practice-title">
+            <i class="fa-solid fa-list-check" style="color: #fbbf24;"></i>
+            <span>Or Pick Any Real-Life Situation to Practice Speaking:</span>
+          </div>
+          <div class="practice-quick-grid" id="practiceQuickGrid">
+            <!-- Dynamically populated practice challenge cards -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: Fullscreen High-Contrast Driver / Counter Card -->
+  <div class="modal-overlay fullscreen-driver-modal" id="driverCardModal" role="dialog" aria-modal="true" aria-labelledby="driverCardKannada">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700;">
+          <i class="fa-solid fa-mobile-screen-button"></i> Show to Driver / Shopkeeper
+        </span>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="driver-card-kannada" id="driverCardKannada">--</div>
+      <div class="driver-card-pronounce" id="driverCardPronounce">--</div>
+      <div class="driver-card-english" id="driverCardEnglish">--</div>
+
+      <button class="driver-card-audio-btn" id="driverCardAudioBtn">
+        <i class="fa-solid fa-volume-high"></i>
+        <span>Play Aloud</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL: Saved Favourites Drawer -->
+  <div class="modal-overlay" id="favoritesModal" role="dialog" aria-modal="true" aria-labelledby="favModalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="favModalTitle">
+          <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> Saved Favourites
+        </h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="favoritesModalList">
+        <!-- Dynamically injected saved phrases -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Giant Screen Picture Flashcard (Show to Driver / Shopkeeper) -->
+  <div class="modal-overlay" id="visualBigScreenModal" role="dialog" aria-modal="true" aria-labelledby="visualBigModalKannada">
+    <div class="visual-big-modal-content">
+      <button class="modal-close-btn" id="closeVisualBigModal" aria-label="Close modal">&times;</button>
+      <div class="visual-big-icon" id="visualBigModalEmoji">🛺</div>
+      <div class="visual-big-kannada" id="visualBigModalKannada">ಮೀಟರ್ ಪ್ರಕಾರ ಬನ್ನಿ ಅಣ್ಣ</div>
+      <div class="visual-big-pronounce" id="visualBigModalPronounce">Meter prakaara banni anna</div>
+      <div class="visual-big-english" id="visualBigModalEnglish">Please come by meter, brother</div>
+      <div class="visual-big-hint">
+        <i class="fa-solid fa-mobile-screen"></i> ಈ ಪರದೆಯನ್ನು ಡ್ರೈವರ್ ಅಥವಾ ಸ್ಥಳೀಯರಿಗೆ ನೇರವಾಗಿ ತೋರಿಸಿ (Show screen directly to local)
+      </div>
+      <div class="visual-big-actions">
+        <button class="visual-big-audio-btn" id="visualBigModalAudioBtn">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>ಗಟ್ಟಿಯಾಗಿ ಕೇಳಿ (Speak Loudly)</span>
+        </button>
+        <button class="visual-big-loop-btn" id="visualBigModalLoopBtn" title="Repeats speech every 4 seconds in loud traffic">
+          <i class="fa-solid fa-repeat"></i>
+          <span>ಟ್ರಾಫಿಕ್ ರಿಪೀಟ್ ಮೋಡ್ (Loop Audio)</span>
+        </button>
+        <button class="visual-big-practice-btn" id="visualBigModalPracticeBtn" title="ಧ್ವನಿ ಅಭ್ಯಾಸ - Practice speaking this in the Speech Studio">
+          <i class="fa-solid fa-microphone-lines"></i>
+          <span>ಧ್ವನಿ ಅಭ್ಯಾಸ (Practice Speaking)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Voice Friend for Illiterate / Non-Reading Users -->
+  <div class="floating-voice-companion" id="floatingVoiceCompanion" role="button" aria-label="ಧ್ವನಿ ಮಾರ್ಗದರ್ಶಿ - Tap to listen">
+    <div class="companion-pulse-ring"></div>
+    <div class="companion-pulse-ring ring-2"></div>
+    <div class="companion-avatar">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+    <div class="companion-label">
+      <span class="companion-title">ಧ್ವನಿ ಮಾರ್ಗದರ್ಶಿ</span>
+      <span class="companion-sub">ಮುಟ್ಟಿ • ಕೇಳಿ (Hear Guide)</span>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-quote">
+        "ಕನ್ನಡ ಕಲಿಯಿರಿ, ಕನ್ನಡದಲ್ಲಿ ಮಾತನಾಡಿ" (Kannada kaliyiri, Kannadadalli maathanaadi)
+      </div>
+      <p style="margin-bottom: 6px;">
+        <strong>NammaBhasha</strong> • The Comprehensive Survival & Situational Kannada Platform.
+      </p>
+      <p style="font-size: 0.78rem; color: var(--text-dim);">
+        100% Offline Progressive Web App (PWA) • Built with Web Speech API & Situational Intelligence.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1889 @@
+{
+  "categories": [
+    {
+      "id": "travel",
+      "name": "Travel & Commute",
+      "kannada": "ಪ್ರಯಾಣ",
+      "icon": "fa-bus",
+      "description": "Buses, autos, metro stations, directions, airport shuttles, and navigating Karnataka.",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "food",
+      "name": "Food & Darshini",
+      "kannada": "ಊಟ ಮತ್ತು ತಿಂಡಿ",
+      "icon": "fa-utensils",
+      "description": "Darshinis, ordering dosas, filter coffee, spicy levels, tokens, and billing.",
+      "color": "#f97316"
+    },
+    {
+      "id": "shopping",
+      "name": "Shopping & Markets",
+      "kannada": "ಖರೀದಿ ಮತ್ತು ಮಾರುಕಟ್ಟೆ",
+      "icon": "fa-basket-shopping",
+      "description": "Local markets, bargaining, grocery stores, weighing, and UPI payments.",
+      "color": "#10b981"
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare & Clinic",
+      "kannada": "ಆರೋಗ್ಯ ಮತ್ತು ತುರ್ತು",
+      "icon": "fa-heart-pulse",
+      "description": "Pharmacies, symptoms, consulting doctors, dosage timing, and medical care.",
+      "color": "#ef4444"
+    },
+    {
+      "id": "house",
+      "name": "House & PG Renting",
+      "kannada": "ಮನೆ ಮತ್ತು ಬಾಡಿಗೆ",
+      "icon": "fa-house",
+      "description": "House hunting, talking to owners, rent, deposit, maintenance, water & electricity.",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "workplace",
+      "name": "Workplace & Office",
+      "kannada": "ಕೆಲಸದ ಸ್ಥಳ",
+      "icon": "fa-briefcase",
+      "description": "Meetings, tea breaks, polite requests, leave notes, and coworker interactions.",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "education",
+      "name": "Education & Campus",
+      "kannada": "ಶಿಕ್ಷಣ ಮತ್ತು ಕಾಲೇಜು",
+      "icon": "fa-graduation-cap",
+      "description": "College, libraries, classroom queries, exams, notes, and staff etiquette.",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "civic",
+      "name": "Bank & Public Services",
+      "kannada": "ಬ್ಯಾಂಕ್ ಮತ್ತು ಸರ್ಕಾರಿ",
+      "icon": "fa-building-columns",
+      "description": "Bank counters, post offices, government offices, forms, and service tokens.",
+      "color": "#ec4899"
+    },
+    {
+      "id": "social",
+      "name": "Social & Small Talk",
+      "kannada": "ಸ್ನೇಹ ಮತ್ತು ಮಾತುಕತೆ",
+      "icon": "fa-handshake",
+      "description": "Introductions, asking wellbeing ('Oota aaytha?'), congratulations, and festivals.",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "quickhelp",
+      "name": "Quick Help & SOS",
+      "kannada": "ತುರ್ತು ಸಹಾಯ (SOS)",
+      "icon": "fa-kit-medical",
+      "description": "One-tap emergency phrases, lost directions, police, ambulance 108, and urgent needs.",
+      "color": "#f43f5e"
+    }
+  ],
+  "alphabet": [
+    {
+      "letter": "ಅ",
+      "translit": "a",
+      "sound": "like 'u' in cup",
+      "example": "ಅಮ್ಮ (Amma - Mother)"
+    },
+    {
+      "letter": "ಆ",
+      "translit": "aa",
+      "sound": "like 'a' in father",
+      "example": "ಆನೆ (Aane - Elephant)"
+    },
+    {
+      "letter": "ಇ",
+      "translit": "i",
+      "sound": "like 'i' in sit",
+      "example": "ಇಲ್ಲಿ (Illi - Here)"
+    },
+    {
+      "letter": "ಈ",
+      "translit": "ee",
+      "sound": "like 'ee' in see",
+      "example": "ಈಗ (Eega - Now)"
+    },
+    {
+      "letter": "ಉ",
+      "translit": "u",
+      "sound": "like 'u' in put",
+      "example": "ಉಪ್ಪು (Uppu - Salt)"
+    },
+    {
+      "letter": "ಊ",
+      "translit": "oo",
+      "sound": "like 'oo' in moon",
+      "example": "ಊಟ (Oota - Meal)"
+    },
+    {
+      "letter": "ಋ",
+      "translit": "ru",
+      "sound": "like 'ri' in rhythm",
+      "example": "ಋಷಿ (Rushi - Sage)"
+    },
+    {
+      "letter": "ಎ",
+      "translit": "e",
+      "sound": "like 'e' in pet",
+      "example": "ಎಲ್ಲಿ (Elli - Where)"
+    },
+    {
+      "letter": "ಏ",
+      "translit": "ae",
+      "sound": "like 'a' in pale",
+      "example": "ಏನು (Enu - What)"
+    },
+    {
+      "letter": "ಐ",
+      "translit": "ai",
+      "sound": "like 'ai' in aisle",
+      "example": "ಐದು (Aidu - Five)"
+    },
+    {
+      "letter": "ಒ",
+      "translit": "o",
+      "sound": "like 'o' in pot",
+      "example": "ಒಂದು (Ondu - One)"
+    },
+    {
+      "letter": "ಓ",
+      "translit": "oh",
+      "sound": "like 'o' in boat",
+      "example": "ಓದು (Oodu - Read)"
+    },
+    {
+      "letter": "ಔ",
+      "translit": "au",
+      "sound": "like 'ou' in out",
+      "example": "ಔಷಧಿ (Aushadhi - Medicine)"
+    },
+    {
+      "letter": "ಕ",
+      "translit": "ka",
+      "sound": "like 'k' in kite",
+      "example": "ಕನ್ನಡ (Kannada)"
+    },
+    {
+      "letter": "ಗ",
+      "translit": "ga",
+      "sound": "like 'g' in go",
+      "example": "ಗಾಡಿ (Gaadi - Vehicle)"
+    },
+    {
+      "letter": "ಚ",
+      "translit": "cha",
+      "sound": "like 'ch' in chair",
+      "example": "ಚಹಾ (Chaha - Tea)"
+    },
+    {
+      "letter": "ಜ",
+      "translit": "ja",
+      "sound": "like 'j' in joy",
+      "example": "ಜಾಗ (Jaaga - Place)"
+    },
+    {
+      "letter": "ತ",
+      "translit": "ta",
+      "sound": "soft 'th' like in think",
+      "example": "ತರಕಾರಿ (Tarakari - Vegetable)"
+    },
+    {
+      "letter": "ದ",
+      "translit": "da",
+      "sound": "soft 'th' like in there",
+      "example": "ದಾರಿ (Daari - Way/Road)"
+    },
+    {
+      "letter": "ನ",
+      "translit": "na",
+      "sound": "like 'n' in name",
+      "example": "ನಮಸ್ಕಾರ (Namaskara)"
+    },
+    {
+      "letter": "ಪ",
+      "translit": "pa",
+      "sound": "like 'p' in pan",
+      "example": "ಪಾಠ (Paatha - Lesson)"
+    },
+    {
+      "letter": "ಬ",
+      "translit": "ba",
+      "sound": "like 'b' in bus",
+      "example": "ಬಸ್ (Bus)"
+    },
+    {
+      "letter": "ಮ",
+      "translit": "ma",
+      "sound": "like 'm' in man",
+      "example": "ಮನೆ (Mane - House)"
+    },
+    {
+      "letter": "ಯ",
+      "translit": "ya",
+      "sound": "like 'y' in yes",
+      "example": "ಯಾರು (Yaaru - Who)"
+    },
+    {
+      "letter": "ರ",
+      "translit": "ra",
+      "sound": "like 'r' in run",
+      "example": "ರಸ್ತೆ (Raste - Road)"
+    },
+    {
+      "letter": "ಲ",
+      "translit": "la",
+      "sound": "like 'l' in love",
+      "example": "ಲೈಬ್ರರಿ (Library)"
+    },
+    {
+      "letter": "ವ",
+      "translit": "va",
+      "sound": "like 'v' in victory",
+      "example": "ವಿಳಾಸ (Vilaasa - Address)"
+    },
+    {
+      "letter": "ಸ",
+      "translit": "sa",
+      "sound": "like 's' in sun",
+      "example": "ಸಹಾಯ (Sahaaya - Help)"
+    },
+    {
+      "letter": "ಹ",
+      "translit": "ha",
+      "sound": "like 'h' in home",
+      "example": "ಹೌದು (Haudu - Yes)"
+    }
+  ],
+  "numbers": [
+    {
+      "num": 1,
+      "kannada": "ಒಂದು",
+      "pronounce": "Ondu"
+    },
+    {
+      "num": 2,
+      "kannada": "ಎರಡು",
+      "pronounce": "Eradu"
+    },
+    {
+      "num": 3,
+      "kannada": "ಮೂರು",
+      "pronounce": "Mooru"
+    },
+    {
+      "num": 4,
+      "kannada": "ನಾಲ್ಕು",
+      "pronounce": "Naalku"
+    },
+    {
+      "num": 5,
+      "kannada": "ಐದು",
+      "pronounce": "Aidu"
+    },
+    {
+      "num": 6,
+      "kannada": "ಆರು",
+      "pronounce": "Aaru"
+    },
+    {
+      "num": 7,
+      "kannada": "ಏಳು",
+      "pronounce": "Elu"
+    },
+    {
+      "num": 8,
+      "kannada": "ಎಂಟು",
+      "pronounce": "Entu"
+    },
+    {
+      "num": 9,
+      "kannada": "ಒಂಬತ್ತು",
+      "pronounce": "Ombhatthu"
+    },
+    {
+      "num": 10,
+      "kannada": "ಹತ್ತು",
+      "pronounce": "Hatthu"
+    },
+    {
+      "num": 15,
+      "kannada": "ಹದಿನೈದು",
+      "pronounce": "Hadinaidu"
+    },
+    {
+      "num": 20,
+      "kannada": "ಇಪ್ಪತ್ತು",
+      "pronounce": "Ippatthu"
+    },
+    {
+      "num": 30,
+      "kannada": "ಮೂವತ್ತು",
+      "pronounce": "Moovatthu"
+    },
+    {
+      "num": 40,
+      "kannada": "ನಲವತ್ತು",
+      "pronounce": "Nalavatthu"
+    },
+    {
+      "num": 50,
+      "kannada": "ಐವತ್ತು",
+      "pronounce": "Aivatthu"
+    },
+    {
+      "num": 60,
+      "kannada": "ಅರವತ್ತು",
+      "pronounce": "Aravatthu"
+    },
+    {
+      "num": 70,
+      "kannada": "ಎಪ್ಪತ್ತು",
+      "pronounce": "Eppatthu"
+    },
+    {
+      "num": 80,
+      "kannada": "ಎಂಬತ್ತು",
+      "pronounce": "Embatthu"
+    },
+    {
+      "num": 90,
+      "kannada": "ತೊಂಬತ್ತು",
+      "pronounce": "Tombatthu"
+    },
+    {
+      "num": 100,
+      "kannada": "ನೂರು",
+      "pronounce": "Nooru"
+    },
+    {
+      "num": 500,
+      "kannada": "ಐನೂರು",
+      "pronounce": "Ainooru"
+    },
+    {
+      "num": 1000,
+      "kannada": "ಸಾವಿರ",
+      "pronounce": "Saavira"
+    }
+  ],
+  "magicWords": [
+    {
+      "word": "ಹೌದು",
+      "pronounce": "Haudu",
+      "english": "Yes",
+      "tip": "Universal affirmation."
+    },
+    {
+      "word": "ಇಲ್ಲ",
+      "pronounce": "Illa",
+      "english": "No / Not there",
+      "tip": "Universal negation."
+    },
+    {
+      "word": "ಬೇಕು",
+      "pronounce": "Beku",
+      "english": "Want / Need",
+      "tip": "Use when asking for anything: 'Coffee beku'."
+    },
+    {
+      "word": "ಬೇಡ",
+      "pronounce": "Beda",
+      "english": "Don't want",
+      "tip": "Polite refusal: 'Beda, dhanyavaada'."
+    },
+    {
+      "word": "ಎಷ್ಟು?",
+      "pronounce": "Eshtu?",
+      "english": "How much?",
+      "tip": "Use for price, time, or quantity."
+    },
+    {
+      "word": "ಎಲ್ಲಿದೆ?",
+      "pronounce": "Ellide?",
+      "english": "Where is it?",
+      "tip": "Add after any place: 'Bus stand ellide?'"
+    },
+    {
+      "word": "ಸ್ವಲ್ಪ",
+      "pronounce": "Swalpa",
+      "english": "A little bit",
+      "tip": "Softens every request: 'Swalpa side bidi'."
+    },
+    {
+      "word": "ದಯವಿಟ್ಟು",
+      "pronounce": "Dayavittu",
+      "english": "Please",
+      "tip": "Highest form of courteous appeal."
+    },
+    {
+      "word": "ಧನ್ಯವಾದಗಳು",
+      "pronounce": "Dhanyavaadagalu",
+      "english": "Thank you",
+      "tip": "Formal and polite gratitude."
+    },
+    {
+      "word": "ಗೊತ್ತಿಲ್ಲ",
+      "pronounce": "Gottilla",
+      "english": "I don't know",
+      "tip": "Useful when someone asks you something."
+    }
+  ],
+  "slang": [
+    {
+      "term": "ಗುರು (Guru)",
+      "meaning": "Buddy, friend, or bro (used casually between peers)",
+      "example": "ಏನ್ ಸಮಾಚಾರ ಗುರು? (En samaachara guru? - What's up buddy?)"
+    },
+    {
+      "term": "ಮಚ್ಚಾ (Macha)",
+      "meaning": "Close pal / bro (Bangalore youth slang)",
+      "example": "ಮಚ್ಚಾ, ಕಾಫಿ ಕುಡಿಯೋಣ ಬಾ! (Macha, coffee kudiyona baa!)"
+    },
+    {
+      "term": "ಸಕ್ಕತ್ (Sakkath)",
+      "meaning": "Awesome, super, amazing",
+      "example": "ಈ ದೋಸೆ ಸಕ್ಕತ್ ಆಗಿದೆ! (Ee dose sakkath aagide! - This dosa is awesome!)"
+    },
+    {
+      "term": "ಬೊಂಬಾಟ್ (Bombat)",
+      "meaning": "Fantastic / top class quality",
+      "example": "ಊಟ ಬೊಂಬಾಟ್ ಗುರು! (Oota bombat guru! - The food is fantastic!)"
+    },
+    {
+      "term": "ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ (Adjust Maadi)",
+      "meaning": "Please cooperate / adjust a little (The golden Bangalore phrase)",
+      "example": "ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ ಅಣ್ಣ (Swalpa adjust maadi anna)"
+    },
+    {
+      "term": "ಸೀನ್ ಇಲ್ಲ (Scene Illa)",
+      "meaning": "No problem / chill / don't worry",
+      "example": "ಏನೂ ತೊಂದರೆ ಇಲ್ಲ, ಸೀನ್ ಇಲ್ಲ ಬಿಡಿ! (Scene illa bidi!)"
+    },
+    {
+      "term": "ಸ್ವಾಮಿ (Swamy)",
+      "meaning": "Respectful address for strangers, shopkeepers, or drivers",
+      "example": "ಬನ್ನಿ ಸ್ವಾಮಿ, ಕೂತ್ಕೊಳ್ಳಿ (Banni swamy, kootkolli)"
+    },
+    {
+      "term": "ಅಣ್ಣ / ಅಕ್ಕ (Anna / Akka)",
+      "meaning": "Elder brother / Elder sister (essential friendly honorific)",
+      "example": "ಮೀಟರ್ ಹಾಕಿ ಅಣ್ಣ (Meter haaki anna)"
+    }
+  ],
+  "builderVocabulary": {
+    "subjects": [
+      {
+        "kannada": "ನನಗೆ",
+        "pronounce": "Nanage",
+        "english": "To me / I"
+      },
+      {
+        "kannada": "ನಾವು",
+        "pronounce": "Naavu",
+        "english": "We"
+      },
+      {
+        "kannada": "ಇದು",
+        "pronounce": "Idu",
+        "english": "This"
+      },
+      {
+        "kannada": "ನೀವು",
+        "pronounce": "Neevu",
+        "english": "You (Respectful)"
+      }
+    ],
+    "objects": [
+      {
+        "kannada": "ಒಂದು ಕಾಫಿ",
+        "pronounce": "Ondu coffee",
+        "english": "One coffee"
+      },
+      {
+        "kannada": "ಮಸಾಲೆ ದೋಸೆ",
+        "pronounce": "Masale dose",
+        "english": "Masala dosa"
+      },
+      {
+        "kannada": "ಬಸ್ ಟಿಕೆಟ್",
+        "pronounce": "Bus ticket",
+        "english": "Bus ticket"
+      },
+      {
+        "kannada": "ನೀರು",
+        "pronounce": "Neeru",
+        "english": "Water"
+      },
+      {
+        "kannada": "ಮೆಟ್ರೋ ಸ್ಟೇಷನ್",
+        "pronounce": "Metro station",
+        "english": "Metro station"
+      },
+      {
+        "kannada": "ಆಸ್ಪತ್ರೆ",
+        "pronounce": "Aaspatre",
+        "english": "Hospital"
+      },
+      {
+        "kannada": "ಬಿಲ್ / ರಶೀದಿ",
+        "pronounce": "Bill / Rasheedi",
+        "english": "Bill / Receipt"
+      },
+      {
+        "kannada": "ವೈದ್ಯರು",
+        "pronounce": "Vaidyaru",
+        "english": "Doctor"
+      }
+    ],
+    "actions": [
+      {
+        "kannada": "ಬೇಕು",
+        "pronounce": "Beku",
+        "english": "Want / Needed"
+      },
+      {
+        "kannada": "ಬೇಡ",
+        "pronounce": "Beda",
+        "english": "Don't want"
+      },
+      {
+        "kannada": "ಕೊಡಿ",
+        "pronounce": "Kodi",
+        "english": "Please give"
+      },
+      {
+        "kannada": "ಎಲ್ಲಿದೆ?",
+        "pronounce": "Ellide?",
+        "english": "Where is it?"
+      },
+      {
+        "kannada": "ಎಷ್ಟು ರೂಪಾಯಿ?",
+        "pronounce": "Eshtu rupaayi?",
+        "english": "How much rupees?"
+      },
+      {
+        "kannada": "ಹೋಗುತ್ತಾ?",
+        "pronounce": "Hoguttaa?",
+        "english": "Does it go?"
+      },
+      {
+        "kannada": "ತೋರಿಸಿ",
+        "pronounce": "Thorisi",
+        "english": "Please show"
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "id": "tr_1",
+      "category": "travel",
+      "kannada": "ಈ ಬಸ್ ಮೆಜೆಸ್ಟಿಕ್ ಗೆ ಹೋಗುತ್ತಾ?",
+      "english": "Does this bus go to Majestic?",
+      "pronunciation": "Ee bus Majestic ge hogut-TAA?",
+      "whenToUse": "Ask the conductor or waiting passengers before boarding any BMTC / KSRTC bus.",
+      "culturalTip": "BMTC buses show destination boards in Kannada; asking this will save you from boarding the wrong route.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ಹತ್ತಿ (Haudu, hatti - Yes, get in) OR ಇಲ್ಲ, ಬೇರೆ ಬಸ್ ಬರುತ್ತೆ (Illa, bere bus barutthe - No, another bus will come)",
+        "whatToSayNext": "ಧನ್ಯವಾದಗಳು, ಒಂದು ಟಿಕೆಟ್ ಕೊಡಿ (Dhanyavaadagalu, ondu ticket kodi - Thank you, give one ticket)"
+      },
+      "tags": [
+        "bus",
+        "commute",
+        "directions"
+      ]
+    },
+    {
+      "id": "tr_2",
+      "category": "travel",
+      "kannada": "ಮೀಟರ್ ಪ್ರಕಾರ ಬನ್ನಿ ಸರ್ / ಅಣ್ಣ",
+      "english": "Please come by the meter, sir / brother.",
+      "pronunciation": "MEE-tar pra-KAA-ra BAN-ni sir / AN-na",
+      "whenToUse": "When hiring an auto-rickshaw anywhere in Bangalore or Mysore.",
+      "culturalTip": "Addressing the driver politely as 'Anna' (brother) establishes immediate goodwill and prevents overcharging.",
+      "nextReply": {
+        "theyMightSay": "ಮೀಟರ್ ಮೇಲೆ 20 ರೂಪಾಯಿ ಕೊಡಿ (Meter mele 20 rupaayi kodi - Give 20 rs extra above meter)",
+        "whatToSayNext": "ಸರಿ ಅಣ್ಣ, ಬನ್ನಿ (Sari anna, banni - Okay brother, let's go) OR ಇಲ್ಲ ಅಣ್ಣ, ಮೀಟರ್ ಅಷ್ಟೇ (Illa anna, meter ashte - No brother, only meter fare)"
+      },
+      "tags": [
+        "auto",
+        "meter",
+        "bargain"
+      ]
+    },
+    {
+      "id": "tr_3",
+      "category": "travel",
+      "kannada": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ, ನಾನು ಇಳಿಯಬೇಕು",
+      "english": "Stop here please, I need to get down.",
+      "pronunciation": "IL-li NIL-li-si, NAA-nu i-li-ya-BE-ku",
+      "whenToUse": "Say this to an auto driver, cab driver, or bus driver when your stop arrives.",
+      "culturalTip": "Short and clear. You can also simply say 'Illi nillisi anna' (Stop here, brother).",
+      "nextReply": {
+        "theyMightSay": "ಸರಿ, ಇಳಿರಿ (Sari, iliri - Okay, get down)",
+        "whatToSayNext": "ಎಷ್ಟು ಆಯ್ತು? (Eshtu aaythu? - How much did it come to?)"
+      },
+      "tags": [
+        "stop",
+        "auto",
+        "destination"
+      ]
+    },
+    {
+      "id": "tr_4",
+      "category": "travel",
+      "kannada": "ಮುಂದಿನ ನಿಲ್ದಾಣ ಯಾವುದು?",
+      "english": "What is the next stop / station?",
+      "pronunciation": "MUN-di-na NIL-daa-na YAA-vu-du?",
+      "whenToUse": "Ask fellow commuters inside a bus or metro train when you are unsure of your location.",
+      "culturalTip": "Kannadigas are very helpful to commuters; someone will happily alert you when your stop arrives.",
+      "nextReply": {
+        "theyMightSay": "ಮುಂದಿನ ಸ್ಟಾಪ್ ಇಂದಿರಾನಗರ (Mundina stop Indiranagar - Next stop is Indiranagar)",
+        "whatToSayNext": "ಬಂದಾಗ ಸ್ವಲ್ಪ ಹೇಳಿ (Bandaaga swalpa heli - Please let me know when it arrives)"
+      },
+      "tags": [
+        "metro",
+        "bus",
+        "stop"
+      ]
+    },
+    {
+      "id": "tr_5",
+      "category": "travel",
+      "kannada": "ಮೆಟ್ರೋ ಸ್ಟೇಷನ್ ಗೆ ಹೇಗೆ ಹೋಗಬೇಕು?",
+      "english": "How do I reach the metro station?",
+      "pronunciation": "MET-ro STAY-shan ge HE-ge ho-ga-BE-ku?",
+      "whenToUse": "Ask pedestrians or shopkeepers when walking in unfamiliar neighborhoods.",
+      "culturalTip": "People will guide you using landmarks like temples, circles, or flyovers.",
+      "nextReply": {
+        "theyMightSay": "ಮುಂದೆ ಹೋಗಿ, ಎಡಕ್ಕೆ ತಿರುಗಿ (Munde hogi, edakke thirugi - Go straight, turn left)",
+        "whatToSayNext": "ಧನ್ಯವಾದಗಳು! (Dhanyavaadagalu! - Thank you!)"
+      },
+      "tags": [
+        "metro",
+        "directions",
+        "navigation"
+      ]
+    },
+    {
+      "id": "tr_6",
+      "category": "travel",
+      "kannada": "ಇಲ್ಲಿಂದ ಎಷ್ಟು ದೂರ ಇದೆ?",
+      "english": "How far is it from here?",
+      "pronunciation": "IL-lin-da ESH-tu DOO-ra I-de?",
+      "whenToUse": "Deciding whether to walk or hail an auto.",
+      "culturalTip": "If they say 'Hathira' (ಹತ್ತಿರ), it's walkable (within 500m-1km).",
+      "nextReply": {
+        "theyMightSay": "ಹತ್ತಿರನೇ ಇದೆ, ಹತ್ತು ನಿಮಿಷ ವಾಕ್ (Hattirane ide, hattu nimisha walk - It is a 10 min walk)",
+        "whatToSayNext": "ಸರಿ, ನಡೆದುಕೊಂಡು ಹೋಗ್ತೀನಿ (Sari, nadedukondu hogteeni - Alright, I will walk)"
+      },
+      "tags": [
+        "distance",
+        "directions"
+      ]
+    },
+    {
+      "id": "tr_7",
+      "category": "travel",
+      "kannada": "ಬಲಕ್ಕೆ ತಿರುಗಿ, ಆಮೇಲೆ ನೇರವಾಗಿ ಹೋಗಿ",
+      "english": "Turn right, then go straight.",
+      "pronunciation": "BA-lak-ke thi-RU-gi, aa-ME-le NE-ra-vaa-gi HO-gi",
+      "whenToUse": "Guiding a cab driver, auto driver, or a friend.",
+      "culturalTip": "'Balakke' = Right, 'Edakke' = Left, 'Neravaagi' = Straight.",
+      "nextReply": {
+        "theyMightSay": "ಆಯಿತು ಸರ್ (Aayithu sir - Done sir)",
+        "whatToSayNext": "ಅಲ್ಲಿ ನಿಲ್ಲಿಸಿ (Alli nillisi - Stop right there)"
+      },
+      "tags": [
+        "directions",
+        "navigation"
+      ]
+    },
+    {
+      "id": "tr_8",
+      "category": "travel",
+      "kannada": "ನಾನು ವಿಮಾನ ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಬೇಕು",
+      "english": "I need to go to the airport (Kempegowda International Airport).",
+      "pronunciation": "NAA-nu vi-MAA-na NIL-daa-nak-ke ho-ga-BE-ku",
+      "whenToUse": "Boarding a Vayu Vajra KIA bus or telling a taxi driver.",
+      "culturalTip": "Vayu Vajra buses connect every part of Bangalore to KIA smoothly 24/7.",
+      "nextReply": {
+        "theyMightSay": "KIA-8 ಬಸ್ ಹತ್ತಿ (KIA-8 bus hatti - Board the KIA-8 bus)",
+        "whatToSayNext": "ಟಿಕೆಟ್ ದರ ಎಷ್ಟು? (Ticket dara eshtu? - What is the ticket fare?)"
+      },
+      "tags": [
+        "airport",
+        "vayu vajra",
+        "travel"
+      ]
+    },
+    {
+      "id": "fd_1",
+      "category": "food",
+      "kannada": "ಒಂದು ಮಸಾಲೆ ದೋಸೆ ಮತ್ತು ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ",
+      "english": "One masala dosa and one filter coffee please.",
+      "pronunciation": "ON-du ma-SAA-le DO-se mat-te ON-du FILTER COFFEE KO-di",
+      "whenToUse": "The quintessential Bangalore Darshini breakfast order at the token counter.",
+      "culturalTip": "Say 'kodi' (please give). Darshinis take orders at the cash counter first to issue a token.",
+      "nextReply": {
+        "theyMightSay": "ಎಂಭತ್ತು ರೂಪಾಯಿ, ಸ್ಕ್ಯಾನ್ ಮಾಡಿ (Embatthu rupaayi, scan maadi - Eighty rupees, please scan)",
+        "whatToSayNext": "ಸ್ಕ್ಯಾನ್ ಮಾಡಿದೆ, ಟೋಕನ್ ಕೊಡಿ (Scan maadide, token kodi - Scanned, give token)"
+      },
+      "tags": [
+        "dosa",
+        "coffee",
+        "darshini"
+      ]
+    },
+    {
+      "id": "fd_2",
+      "category": "food",
+      "kannada": "ಖಾರ ಸ್ವಲ್ಪ ಕಮ್ಮಿ ಮಾಡಿ",
+      "english": "Please make it less spicy.",
+      "pronunciation": "KHAA-ra SWAL-pa KAM-mi MAA-di",
+      "whenToUse": "Ordering dishes like Bisi Bele Bath, Chitranna, or Curries if sensitive to spices.",
+      "culturalTip": "'Khara' means spicy heat. 'Kammi maadi' politely asks to tone it down.",
+      "nextReply": {
+        "theyMightSay": "ಸರಿ ಸರ್, ಕಮ್ಮಿ ಖಾರ ಮಾಡ್ತೀವಿ (Sari sir, kammi khaara maadtivi - Okay, we will make it mild)",
+        "whatToSayNext": "ಧನ್ಯವಾದ (Dhanyavaada - Thank you)"
+      },
+      "tags": [
+        "spicy",
+        "taste",
+        "food"
+      ]
+    },
+    {
+      "id": "fd_3",
+      "category": "food",
+      "kannada": "ಸ್ವಲ್ಪ ಚಟ್ನಿ ಮತ್ತು ಸಾಂಬಾರ್ ಜಾಸ್ತಿ ಹಾಕಿ",
+      "english": "Please add a little more chutney and sambar.",
+      "pronunciation": "SWAL-pa CHUTNEY mat-te SAMBAR JAAS-ti HAA-ki",
+      "whenToUse": "At the serving counter in Darshinis where chutney refills are happily provided.",
+      "culturalTip": "Bangalore coconut chutney and slightly sweet Udupi sambar refills are universally welcomed.",
+      "nextReply": {
+        "theyMightSay": "ಹಾಕ್ತೀನಿ, ಪ್ಲೇಟ್ ಮುಂದೆ ತನ್ನಿ (Haaktini, plate munde tanni - Bringing plate forward)",
+        "whatToSayNext": "ಸಾಕು, ಧನ್ಯವಾದಗಳು (Saaku, dhanyavaadagalu - That is enough, thank you)"
+      },
+      "tags": [
+        "chutney",
+        "sambar",
+        "refill"
+      ]
+    },
+    {
+      "id": "fd_4",
+      "category": "food",
+      "kannada": "ಕುಡಿಯುವ ಬಿಸಿ ನೀರು ಕೊಡಿ",
+      "english": "Please give hot drinking water.",
+      "pronunciation": "ku-di-YU-va BI-si NEE-ru KO-di",
+      "whenToUse": "Asking waiter or counter boy for warm water.",
+      "culturalTip": "'Bisi neeru' = hot water, 'Tampu neeru' = cold water.",
+      "nextReply": {
+        "theyMightSay": "ತಗೊಳ್ಳಿ ಸ್ವಾಮಿ (Tagolli swamy - Take it sir)",
+        "whatToSayNext": "ಧನ್ಯವಾದ (Dhanyavaada - Thank you)"
+      },
+      "tags": [
+        "water",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "fd_5",
+      "category": "food",
+      "kannada": "ಪಾರ್ಸಲ್ ಮಾಡಿಕೊಡ್ತೀರಾ?",
+      "english": "Can you pack this for takeaway / parcel?",
+      "pronunciation": "PARCEL maa-di-kod-TEE-raa?",
+      "whenToUse": "Ordering food to take home or packaging leftovers.",
+      "culturalTip": "'Parcel' is standard throughout Karnataka restaurants.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ಕವರ್ ಚಾರ್ಜ್ ಐದು ರೂಪಾಯಿ (Haudu, cover charge aidu rupaayi - Yes, packaging is 5 rs)",
+        "whatToSayNext": "ಸರಿ, ಪ್ಯಾಕ್ ಮಾಡಿ (Sari, pack maadi - Okay, please pack it)"
+      },
+      "tags": [
+        "takeaway",
+        "parcel"
+      ]
+    },
+    {
+      "id": "fd_6",
+      "category": "food",
+      "kannada": "ಊಟ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ!",
+      "english": "The food is very delicious / good!",
+      "pronunciation": "OO-ta TUM-ba CHEN-naa-gi-de!",
+      "whenToUse": "Complimenting the cook, waiter, or host after a meal.",
+      "culturalTip": "A heartfelt 'Oota chennagide' brings an instant, proud smile to any cook or restaurant owner.",
+      "nextReply": {
+        "theyMightSay": "ತುಂಬಾ ಸಂತೋಷ ಸರ್, ಮತ್ತೆ ಬನ್ನಿ (Tumba santhosha sir, matte banni - Very glad, come again!)",
+        "whatToSayNext": "ಖಂಡಿತ ಬರ್ತೀನಿ (Khanditha bartini - Definitely will come)"
+      },
+      "tags": [
+        "compliment",
+        "food",
+        "appreciation"
+      ]
+    },
+    {
+      "id": "sh_1",
+      "category": "shopping",
+      "kannada": "ಇದು ಎಷ್ಟು ರೂಪಾಯಿ?",
+      "english": "How much rupees is this?",
+      "pronunciation": "I-du ESH-tu roo-PAA-yi?",
+      "whenToUse": "The quintessential shopping question at any vegetable stall, bakery, or street shop.",
+      "culturalTip": "You can also simply point and ask 'Idhu eshtu?' (How much is this?).",
+      "nextReply": {
+        "theyMightSay": "ಐವತ್ತು ರೂಪಾಯಿ (Aivatthu rupaayi - Fifty rupees)",
+        "whatToSayNext": "ಸ್ವಲ್ಪ ಕಮ್ಮಿ ಮಾಡಿ ಅಣ್ಣ (Swalpa kammi maadi anna - Please reduce a little bit, brother)"
+      },
+      "tags": [
+        "price",
+        "market",
+        "bargain"
+      ]
+    },
+    {
+      "id": "sh_2",
+      "category": "shopping",
+      "kannada": "ಸ್ವಲ್ಪ ಕಮ್ಮಿ ಮಾಡಿ ಅಣ್ಣ",
+      "english": "Please reduce the price a little, brother.",
+      "pronunciation": "SWAL-pa KAM-mi MAA-di AN-na",
+      "whenToUse": "Polite street bargaining at local markets like KR Market, Malleshwaram 8th Cross, or Commercial Street.",
+      "culturalTip": "Always smile and say 'Kammi maadi'. Aggressive bargaining is discouraged, but friendly requests always work.",
+      "nextReply": {
+        "theyMightSay": "ಸರಿ, ನಲವತ್ತಕ್ಕೆ ತಗೊಳ್ಳಿ (Sari, nalavattak-ke tagolli - Okay, take it for forty)",
+        "whatToSayNext": "ಧನ್ಯವಾದ, ಕೊಡಿ (Dhanyavaada, kodi - Thank you, give it)"
+      },
+      "tags": [
+        "bargain",
+        "discount",
+        "market"
+      ]
+    },
+    {
+      "id": "sh_3",
+      "category": "shopping",
+      "kannada": "UPI / PhonePe / GPay ತಗೋತೀರಾ?",
+      "english": "Do you accept UPI / PhonePe / Google Pay?",
+      "pronunciation": "UPI / PhonePe / GPay ta-GO-thee-raa?",
+      "whenToUse": "Before purchasing at small street vendors, coconut vendors, or tea stalls.",
+      "culturalTip": "Bangalore is India's tech hub; 99% of roadside vendors have a QR soundbox, but it's polite to ask.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ಕ್ಯೂಆರ್ ಕೋಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ (Haudu, QR code scan maadi - Yes, scan the QR code)",
+        "whatToSayNext": "ಪೇ ಮಾಡಿದೆ, ನೋಡಿ (Pay maadide, nodi - I have paid, please check)"
+      },
+      "tags": [
+        "upi",
+        "digital payment",
+        "online"
+      ]
+    },
+    {
+      "id": "sh_4",
+      "category": "shopping",
+      "kannada": "ಒಂದು ಕೆಜಿ ತಾಜಾ ಹಣ್ಣು / ತರಕಾರಿ ಕೊಡಿ",
+      "english": "Give me one kilogram of fresh fruits / vegetables.",
+      "pronunciation": "ON-du KG TAA-jaa HAN-nu / ta-ra-KAA-ri KO-di",
+      "whenToUse": "Ordering at local vegetable and fruit markets.",
+      "culturalTip": "'Taaja' means fresh. Saying 'Ondu kg kodi' is clear and polite.",
+      "nextReply": {
+        "theyMightSay": "ಇನ್ನೇನು ಬೇಕು? (In-ne-nu beku? - What else do you need?)",
+        "whatToSayNext": "ಅಷ್ಟೇ ಸಾಕು, ಬಿಲ್ ಎಷ್ಟು? (Ashte saaku, bill eshtu? - That is enough, what is the bill?)"
+      },
+      "tags": [
+        "groceries",
+        "fruits",
+        "market"
+      ]
+    },
+    {
+      "id": "sh_5",
+      "category": "shopping",
+      "kannada": "ಚಿಲ್ಲರೆ ಇದೆಯಾ ನಿಮ್ಮ ಹತ್ತಿರ?",
+      "english": "Do you have change with you?",
+      "pronunciation": "CHIL-la-re I-de-yaa NIM-ma hat-TI-ra?",
+      "whenToUse": "When handing over a 500-rupee note for a 40-rupee purchase.",
+      "culturalTip": "'Chillare' is the universal word across Karnataka for small change / coins.",
+      "nextReply": {
+        "theyMightSay": "ಇಲ್ಲ, ಆನ್‌ಲೈನ್ ಪೇ ಮಾಡಿ (Illa, online pay maadi - No, please pay online)",
+        "whatToSayNext": "ಸರಿ, PhonePe ಮಾಡ್ತೀನಿ (Sari, PhonePe maadtini - Okay, I will do PhonePe)"
+      },
+      "tags": [
+        "change",
+        "cash",
+        "coins"
+      ]
+    },
+    {
+      "id": "sh_6",
+      "category": "shopping",
+      "kannada": "ಬೇರೆ ಬಣ್ಣ ಅಥವಾ ಸೈಜ್ ಇದೆಯಾ?",
+      "english": "Do you have another colour or size?",
+      "pronunciation": "BE-re BAN-na athava SIZE I-de-yaa?",
+      "whenToUse": "Clothing and footwear shopping.",
+      "culturalTip": "'Banna' = colour; 'Bere' = another / different.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ನೀಲಿ ಮತ್ತು ಕಪ್ಪು ಇದೆ (Haudu, neeli matte kappu ide - Yes, blue and black are available)",
+        "whatToSayNext": "ನೀಲಿ ಬಣ್ಣ ತೋರಿಸಿ (Neeli banna thorisi - Show me the blue colour)"
+      },
+      "tags": [
+        "clothing",
+        "color",
+        "size"
+      ]
+    },
+    {
+      "id": "hc_1",
+      "category": "healthcare",
+      "kannada": "ನನಗೆ ಜ್ವರ ಮತ್ತು ತಲೆ ನೋವು ಇದೆ",
+      "english": "I have fever and a headache.",
+      "pronunciation": "NA-na-ge JVA-ra mat-te TA-le NO-vu I-de",
+      "whenToUse": "Explaining symptoms to a doctor or pharmacist.",
+      "culturalTip": "'Jvara' = fever, 'Tale novu' = headache, 'Hotte novu' = stomachache.",
+      "nextReply": {
+        "theyMightSay": "ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ? (Eshtu dinadinda ide? - Since how many days?)",
+        "whatToSayNext": "ಎರಡು ದಿನದಿಂದ (Eradu dinadinda - Since two days)"
+      },
+      "tags": [
+        "fever",
+        "headache",
+        "symptoms"
+      ]
+    },
+    {
+      "id": "hc_2",
+      "category": "healthcare",
+      "kannada": "ಹತ್ತಿರದ ಆಸ್ಪತ್ರೆ ಅಥವಾ ಕ್ಲಿನಿಕ್ ಎಲ್ಲಿದೆ?",
+      "english": "Where is the nearest hospital or clinic?",
+      "pronunciation": "HAT-ti-ra-da AAS-pa-tre a-tha-va CLINIC EL-li-de?",
+      "whenToUse": "Urgent healthcare situation when looking for medical attention.",
+      "culturalTip": "Aaspatre is the Kannada word for hospital. Anyone will immediately direct you.",
+      "nextReply": {
+        "theyMightSay": "ಮುಂದಿನ ಜಂಕ್ಷನ್‌ನಲ್ಲಿ ದೊಡ್ಡ ಆಸ್ಪತ್ರೆ ಇದೆ (Mundina junction-nalli dodda aaspatre ide)",
+        "whatToSayNext": "ಧನ್ಯವಾದ, ಬೇಗ ಹೋಗ್ತೀನಿ (Dhanyavaada, bega hogteeni - Thank you, I will go quickly)"
+      },
+      "tags": [
+        "hospital",
+        "clinic",
+        "emergency"
+      ]
+    },
+    {
+      "id": "hc_3",
+      "category": "healthcare",
+      "kannada": "ಈ ಮಾತ್ರೆ ಊಟದ ನಂತರ ತಗೋಬೇಕಾ?",
+      "english": "Should I take this medicine after food?",
+      "pronunciation": "Ee MAAT-re OO-ta-da NAN-ta-ra ta-go-BE-kaa?",
+      "whenToUse": "Clarifying dosage instructions with a chemist or doctor.",
+      "culturalTip": "'Ootada nantara' = after food, 'Ootakkinta munche' = before food.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ರಾತ್ರಿ ಊಟದ ನಂತರ ಒಂದು ಮಾತ್ರೆ (Haudu, raatri ootada nantara ondu maatre)",
+        "whatToSayNext": "ಸರಿ, ಅರ್ಥವಾಯಿತು (Sari, arthavaayithu - Okay, I understood)"
+      },
+      "tags": [
+        "medicine",
+        "prescription",
+        "pharmacy"
+      ]
+    },
+    {
+      "id": "hc_4",
+      "category": "healthcare",
+      "kannada": "ವೈದ್ಯರು ಯಾವಾಗ ಬರ್ತಾರೆ?",
+      "english": "When will the doctor arrive?",
+      "pronunciation": "VAID-ya-ru YAA-vaa-ga BAR-taa-re?",
+      "whenToUse": "Inquiring at a clinic reception desk.",
+      "culturalTip": "Doctors are addressed respectfully as 'Vaidyaru' or 'Doctor-re'.",
+      "nextReply": {
+        "theyMightSay": "ಸಂಜೆ ಐದು ಗಂಟೆಗೆ ಬರ್ತಾರೆ (Sanje aidu gantege bartare - Doctor arrives at 5 PM)",
+        "whatToSayNext": "ಟೋಕನ್ ನಂಬರ್ ಕೊಡಿ (Token number kodi - Please give the token number)"
+      },
+      "tags": [
+        "doctor",
+        "appointment",
+        "clinic"
+      ]
+    },
+    {
+      "id": "hc_5",
+      "category": "healthcare",
+      "kannada": "ನನಗೆ ಈ ಔಷಧಿಗೆ ಅಲರ್ಜಿ ಇದೆ",
+      "english": "I am allergic to this medicine.",
+      "pronunciation": "NA-na-ge ee au-sha-dhi-ge AL-LER-GY I-de",
+      "whenToUse": "Crucial safety phrase during doctor consultation.",
+      "culturalTip": "'Aushadhi' is medicine. Informing the doctor about allergies prevents medical mishaps.",
+      "nextReply": {
+        "theyMightSay": "ಬೇರೆ ಔಷಧಿ ಬರೆದುಕೊಡ್ತೀನಿ (Bere aushadhi baredhu kodteeni - I will prescribe an alternative medicine)",
+        "whatToSayNext": "ತುಂಬಾ ಧನ್ಯವಾದಗಳು (Tumba dhanyavaadagalu - Thank you very much)"
+      },
+      "tags": [
+        "allergy",
+        "safety",
+        "prescription"
+      ]
+    },
+    {
+      "id": "hs_1",
+      "category": "house",
+      "kannada": "ಮನೆ ಅಥವಾ ಪಿಜಿ ಬಾಡಿಗೆಗೆ ಖಾಲಿ ಇದೆಯಾ?",
+      "english": "Is a house or PG room vacant for rent?",
+      "pronunciation": "MA-ne a-tha-va PG BAA-di-ge-ge KHAA-li I-de-yaa?",
+      "whenToUse": "Calling a to-let board number or inquiring with building security.",
+      "culturalTip": "'Baadige' means rent; 'Khaali' means vacant. Essential for house hunters in Karnataka.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, 1 BHK ಖಾಲಿ ಇದೆ (Haudu, 1 BHK khaali ide - Yes, 1 BHK is vacant)",
+        "whatToSayNext": "ತಿಂಗಳಿಗೆ ಬಾಡಿಗೆ ಮತ್ತು ಅಡ್ವಾನ್ಸ್ ಎಷ್ಟು? (Tingalige baadige matte advance eshtu? - How much rent and deposit?)"
+      },
+      "tags": [
+        "rent",
+        "house",
+        "pg"
+      ]
+    },
+    {
+      "id": "hs_2",
+      "category": "house",
+      "kannada": "ತಿಂಗಳಿಗೆ ಬಾಡಿಗೆ ಮತ್ತು ಅಡ್ವಾನ್ಸ್ ಡಿಪಾಸಿಟ್ ಎಷ್ಟು?",
+      "english": "What is the monthly rent and advance deposit?",
+      "pronunciation": "TIN-ga-li-ge BAA-di-ge mat-te ADVANCE DEPOSIT ESH-tu?",
+      "whenToUse": "Clarifying financial terms with the landlord.",
+      "culturalTip": "In Bangalore, security deposits vary from 2 to 6 months' rent. Asking early is crucial.",
+      "nextReply": {
+        "theyMightSay": "ಬಾಡಿಗೆ ಹದಿನೈದು ಸಾವಿರ, ಅಡ್ವಾನ್ಸ್ ಐವತ್ತು ಸಾವಿರ (Rent 15k, advance 50k)",
+        "whatToSayNext": "ಮೇಂಟೆನೆನ್ಸ್ ಇದರಲ್ಲಿ ಸೇರಿದ್ದೆಯಾ? (Maintenance idaralli seriddheya? - Is maintenance included?)"
+      },
+      "tags": [
+        "deposit",
+        "money",
+        "owner"
+      ]
+    },
+    {
+      "id": "hs_3",
+      "category": "house",
+      "kannada": "ಕಾವೇರಿ ನೀರು ಮತ್ತು ವಿದ್ಯುತ್ ಸೌಲಭ್ಯ ಇದೆಯಾ?",
+      "english": "Is there Cauvery water and electricity facility?",
+      "pronunciation": "CAUVERY NEE-ru mat-te VID-yut SAU-la-bhya I-de-yaa?",
+      "whenToUse": "Crucial infrastructure check for house hunting in Bangalore.",
+      "culturalTip": "'Cauvery neeru' indicates municipal water supply, which is superior to borewell-only tankers.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ದಿನದ ಇಪ್ಪತ್ನಾಲ್ಕು ಗಂಟೆ ನೀರು ಬರುತ್ತೆ (Yes, 24 hours water comes)",
+        "whatToSayNext": "ತುಂಬಾ ಒಳ್ಳೆಯದು (Tumba olleyadu - Very good)"
+      },
+      "tags": [
+        "water",
+        "electricity",
+        "amenities"
+      ]
+    },
+    {
+      "id": "wp_1",
+      "category": "workplace",
+      "kannada": "ಮೀಟಿಂಗ್ ಎಷ್ಟು ಹೊತ್ತಿಗೆ ಶುರುವಾಗುತ್ತೆ?",
+      "english": "What time will the meeting start?",
+      "pronunciation": "MEETING ESH-tu HOT-ti-ge SHU-ru-vaa-gut-the?",
+      "whenToUse": "Checking schedule with coworkers or managers.",
+      "culturalTip": "'Eshtu hottige' means 'at what time'. Common daily corporate phrase.",
+      "nextReply": {
+        "theyMightSay": "ಮಧ್ಯಾಹ್ನ ಮೂರು ಗಂಟೆಗೆ (Madhyaahna mooru gantege - At 3 PM in the afternoon)",
+        "whatToSayNext": "ಸರಿ, ಲಿಂಕ್ ಕಳುಹಿಸಿ (Sari, link kaluhisi - Okay, please send the link)"
+      },
+      "tags": [
+        "meeting",
+        "schedule",
+        "office"
+      ]
+    },
+    {
+      "id": "wp_2",
+      "category": "workplace",
+      "kannada": "ಚಹಾ / ಕಾಫಿ ಕುಡಿಯೋಣ ಬನ್ನಿ",
+      "english": "Come, let's go have tea or coffee.",
+      "pronunciation": "CHA-haa / COFFEE ku-di-YO-na BAN-ni",
+      "whenToUse": "The quintessential Bangalore office break icebreaker at 4 PM.",
+      "culturalTip": "Filter coffee breaks are where strong team bonds and friendships are forged in Karnataka.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು ಬನ್ನಿ, ಒಂದು ಬ್ರೇಕ್ ಬೇಕಾಗಿತ್ತು (Haudu banni, ondu break bekaagittu)",
+        "whatToSayNext": "ಹತ್ತಿರದ ಟೀ ಸ್ಟಾಲ್‌ಗೆ ಹೋಗೋಣ (Hattirada tea stall ge hogona)"
+      },
+      "tags": [
+        "coffee",
+        "break",
+        "networking"
+      ]
+    },
+    {
+      "id": "wp_3",
+      "category": "workplace",
+      "kannada": "ಈ ಫೈಲ್ ಅಥವಾ ಡಾಕ್ಯುಮೆಂಟ್ ಕಳುಹಿಸಿ",
+      "english": "Please send this file or document.",
+      "pronunciation": "Ee FILE athava DOCUMENT ka-lu-HI-si",
+      "whenToUse": "Requesting project resources from teammates.",
+      "culturalTip": "'Kaluhisi' is polite for 'please send'.",
+      "nextReply": {
+        "theyMightSay": "ಈಗಲೇ ಇಮೇಲ್ ಮಾಡ್ತೀನಿ (Eegale email maadtini - I will email it right now)",
+        "whatToSayNext": "ತುಂಬಾ ಧನ್ಯವಾದ (Tumba dhanyavaada - Thank you very much)"
+      },
+      "tags": [
+        "work",
+        "file",
+        "email"
+      ]
+    },
+    {
+      "id": "ed_1",
+      "category": "education",
+      "kannada": "ಸರ್ / ಮೇಡಂ, ನಾನು ಒಳಗೆ ಬರಬಹುದಾ?",
+      "english": "Sir / Madam, may I come in?",
+      "pronunciation": "Sir / Madam, NAA-nu O-la-ge BA-ra-ba-hu-DAA?",
+      "whenToUse": "Polite permission before entering a lecture hall or staff room.",
+      "culturalTip": "Universities and schools in Karnataka value polite entry etiquette.",
+      "nextReply": {
+        "theyMightSay": "ಬನ್ನಿ, ಕೂತ್ಕೊಳ್ಳಿ (Banni, kootkolli - Come in, have a seat)",
+        "whatToSayNext": "ಧನ್ಯವಾದಗಳು ಸರ್ (Dhanyavaadagalu sir - Thank you sir)"
+      },
+      "tags": [
+        "classroom",
+        "permission",
+        "respect"
+      ]
+    },
+    {
+      "id": "ed_2",
+      "category": "education",
+      "kannada": "ಗ್ರಂಥಾಲಯ (ಲೈಬ್ರರಿ) ಎಲ್ಲಿದೆ?",
+      "english": "Where is the library located?",
+      "pronunciation": "GRAN-thaa-la-ya (Library) EL-li-de?",
+      "whenToUse": "Campus navigation for new students.",
+      "culturalTip": "'Granthalaya' is the formal Kannada word; both 'Library' and 'Granthalaya' are understood.",
+      "nextReply": {
+        "theyMightSay": "ಮೊದಲನೇ ಮಹಡಿಯಲ್ಲಿ ಇದೆ (Modalane mahadiyalli ide - On the first floor)",
+        "whatToSayNext": "ಟೈಮಿಂಗ್ಸ್ ಏನು? (Timings enu? - What are the library timings?)"
+      },
+      "tags": [
+        "library",
+        "campus",
+        "study"
+      ]
+    },
+    {
+      "id": "cv_1",
+      "category": "civic",
+      "kannada": "ಹೊಸ ಖಾತೆ ತೆರೆಯಲು ಈ ಫಾರ್ಮ್ ತುಂಬಬೇಕಾ?",
+      "english": "Should I fill this form to open a new account?",
+      "pronunciation": "HO-sa KHAA-te te-RE-ya-lu ee FORM TUM-ba-BE-kaa?",
+      "whenToUse": "At bank help desks or public service counters.",
+      "culturalTip": "'Khaate' = account. Officials will point to specific columns to sign.",
+      "nextReply": {
+        "theyMightSay": "ಹೌದು, ಆಧಾರ್ ಕಾರ್ಡ್ ಜೆರಾಕ್ಸ್ ಕೊಡಿ (Haudu, Aadhaar card xerox kodi)",
+        "whatToSayNext": "ಜೆರಾಕ್ಸ್ ಇದೆ, ತಗೊಳ್ಳಿ (Xerox ide, tagolli - I have the copy, take it)"
+      },
+      "tags": [
+        "bank",
+        "form",
+        "aadhaar"
+      ]
+    },
+    {
+      "id": "cv_2",
+      "category": "civic",
+      "kannada": "ಟೋಕನ್ ಕೌಂಟರ್ ನಂಬರ್ ಎಷ್ಟು?",
+      "english": "What is the token counter number?",
+      "pronunciation": "TOKEN COUNTER NUMBER ESH-tu?",
+      "whenToUse": "Public offices, post offices, and RTO counters.",
+      "culturalTip": "'Counter number' is universally understood.",
+      "nextReply": {
+        "theyMightSay": "ಮೂರನೇ ಕೌಂಟರ್ ಗೆ ಹೋಗಿ (Moorane counter ge hogi - Go to counter 3)",
+        "whatToSayNext": "ಧನ್ಯವಾದ (Dhanyavaada - Thank you)"
+      },
+      "tags": [
+        "token",
+        "post office",
+        "counter"
+      ]
+    },
+    {
+      "id": "sc_1",
+      "category": "social",
+      "kannada": "ನಮಸ್ಕಾರ! ನಿಮ್ಮ ಹೆಸರು ಏನು?",
+      "english": "Hello / Greetings! What is your name?",
+      "pronunciation": "NA-mas-KAA-ra! NIM-ma HE-sa-ru E-nu?",
+      "whenToUse": "Polite introduction with new neighbors, colleagues, or acquaintances.",
+      "culturalTip": "'Namaskara' with folded hands is the timeless Kannada greeting.",
+      "nextReply": {
+        "theyMightSay": "ನನ್ನ ಹೆಸರು ಸುರೇಶ್, ನಿಮ್ಮದು? (Nanna hesaru Suresh, nimmadu?)",
+        "whatToSayNext": "ನನ್ನ ಹೆಸರು... ಭೇಟಿಯಾಗಿದ್ದು ಖುಷಿಯಾಯಿತು (Nanna hesaru... Bhetiyaagiddu khushiyaayithu - Nice to meet you)"
+      },
+      "tags": [
+        "introduction",
+        "name",
+        "greeting"
+      ]
+    },
+    {
+      "id": "sc_2",
+      "category": "social",
+      "kannada": "ಊಟ ಆಯ್ತಾ? (ಊಟ ಮಾಡಿದ್ದೀರಾ?)",
+      "english": "Did you have food? / Have you eaten?",
+      "pronunciation": "OO-ta AAY-taa?",
+      "whenToUse": "The ultimate cultural warmth phrase in Karnataka. Asking this is like asking 'How are you?'",
+      "culturalTip": "Asking 'Oota aaytha?' shows genuine care and affection across friends, neighbors, and colleagues.",
+      "nextReply": {
+        "theyMightSay": "ಆಯ್ತು, ನಿಮ್ಮದು ಆಯ್ತಾ? (Aaythu, nimmadu aaytha? - Yes done, what about yours?)",
+        "whatToSayNext": "ನನ್ನದು ಆಯ್ತು, ಧನ್ಯವಾದಗಳು (Nannadu aaythu, dhanyavaadagalu - Mine is done too, thank you)"
+      },
+      "tags": [
+        "food",
+        "care",
+        "small talk"
+      ]
+    },
+    {
+      "id": "sc_3",
+      "category": "social",
+      "kannada": "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಶುಭಾಶಯಗಳು!",
+      "english": "Happy Kannada Rajyotsava (Karnataka Formation Day)!",
+      "pronunciation": "Kan-na-da RAAJ-yot-sa-va-da SHU-bhaa-sha-ya-ga-lu!",
+      "whenToUse": "November 1st and throughout Karnataka Rajyotsava month.",
+      "culturalTip": "Wishing locals on Rajyotsava displays immense cultural respect and affection for Karnataka.",
+      "nextReply": {
+        "theyMightSay": "ನಿಮಗೂ ಕೂಡ ಶುಭಾಶಯಗಳು! (Nimagu kooda shubhaashayagalu! - Greetings to you too!)",
+        "whatToSayNext": "ಜೈ ಕರ್ನಾಟಕ ಮಾತೆ! (Jai Karnataka Maate!)"
+      },
+      "tags": [
+        "festival",
+        "rajyotsava",
+        "culture"
+      ]
+    },
+    {
+      "id": "qh_1",
+      "category": "quickhelp",
+      "kannada": "ದಯವಿಟ್ಟು ನನಗೆ ಸಹಾಯ ಮಾಡಿ!",
+      "english": "Please help me!",
+      "pronunciation": "DAYA-vit-tu NA-na-ge sa-HAA-ya MAA-di!",
+      "whenToUse": "Urgent distress or when you need someone's immediate attention.",
+      "culturalTip": "'Dayavittu' adds deep politeness, signaling genuine need.",
+      "nextReply": {
+        "theyMightSay": "ಏನಾಯ್ತು? ಏನು ಸಹಾಯ ಬೇಕು? (Enaaythu? Enu sahaaya beku? - What happened? What help is needed?)",
+        "whatToSayNext": "ನನಗೆ ಈ ಜಾಗ ಗೊತ್ತಿಲ್ಲ (Nanage ee jaaga gottilla - I do not know this place)"
+      },
+      "tags": [
+        "emergency",
+        "sos",
+        "help"
+      ],
+      "isEmergency": true
+    },
+    {
+      "id": "qh_2",
+      "category": "quickhelp",
+      "kannada": "ನನ್ನ ದಾರಿ ತಪ್ಪಿದೆ, ಈ ವಿಳಾಸ ಎಲ್ಲಿದೆ?",
+      "english": "I have lost my way, where is this address?",
+      "pronunciation": "NAN-na DAA-ri TAP-pi-de, ee vi-LAA-sa EL-li-de?",
+      "whenToUse": "When lost in an unfamiliar locality or trying to find a house number.",
+      "culturalTip": "Show the address text on your phone alongside saying this phrase.",
+      "nextReply": {
+        "theyMightSay": "ತೋರಿಸಿ, ನಾನು ಮಾರ್ಗ ತೋರಿಸ್ತೀನಿ (Thorisi, naanu maarga thoristini - Show me, I will show the path)",
+        "whatToSayNext": "ತುಂಬಾ ಉಪಕಾರ! (Tumba upakaara! - Immense favor/thanks!)"
+      },
+      "tags": [
+        "lost",
+        "directions",
+        "address"
+      ],
+      "isEmergency": true
+    },
+    {
+      "id": "qh_3",
+      "category": "quickhelp",
+      "kannada": "ನನಗೆ ಕನ್ನಡ ಸರಿಯಾಗಿ ಬರಲ್ಲ, ಸ್ವಲ್ಪ ನಿಧಾನವಾಗಿ ಮಾತನಾಡಿ",
+      "english": "I don't know Kannada properly, please speak slowly.",
+      "pronunciation": "NA-na-ge Kan-na-da sa-ri-YAA-gi BA-ral-la, SWAL-pa ni-DHAA-na-vaa-gi maa-tha-NAA-di",
+      "whenToUse": "When someone speaks too fast or uses complex dialect.",
+      "culturalTip": "Kannadigas appreciate learners and will instantly shift to simpler words or English.",
+      "nextReply": {
+        "theyMightSay": "ಪರವಾಗಿಲ್ಲ! ನಿಧಾನವಾಗಿ ಹೇಳ್ತೀನಿ (Paravaagilla! Nidhaanavaagi heltini - No problem! I will tell you slowly)",
+        "whatToSayNext": "ಧನ್ಯವಾದಗಳು (Dhanyavaadagalu - Thank you)"
+      },
+      "tags": [
+        "slow",
+        "beginner",
+        "communication"
+      ],
+      "isEmergency": true
+    },
+    {
+      "id": "qh_4",
+      "category": "quickhelp",
+      "kannada": "ಹತ್ತಿರದ ಪೊಲೀಸ್ ಠಾಣೆ ಎಲ್ಲಿದೆ?",
+      "english": "Where is the nearest police station?",
+      "pronunciation": "HAT-ti-ra-da POLICE THAA-ne EL-li-de?",
+      "whenToUse": "In case of theft, lost documents, or seeking police protection.",
+      "culturalTip": "Police station is called 'Police Thaane' throughout Karnataka.",
+      "nextReply": {
+        "theyMightSay": "ಮೇನ್ ರೋಡ್‌ನಲ್ಲಿ ಟ್ರಾಫಿಕ್ ಸಿಗ್ನಲ್ ಪಕ್ಕದಲ್ಲೇ ಇದೆ (Main road-nalli traffic signal pakkadalle ide)",
+        "whatToSayNext": "ಧನ್ಯವಾದ (Dhanyavaada - Thank you)"
+      },
+      "tags": [
+        "police",
+        "safety",
+        "sos"
+      ],
+      "isEmergency": true
+    },
+    {
+      "id": "qh_5",
+      "category": "quickhelp",
+      "kannada": "ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕರೆಯಿರಿ (108)",
+      "english": "Please call an ambulance immediately (108).",
+      "pronunciation": "DAYA-vit-tu AMBULANCE ka-re-YI-ri (noora entu)",
+      "whenToUse": "Severe medical distress or critical road accident.",
+      "culturalTip": "108 is Karnataka's dedicated emergency ambulance helpline number.",
+      "nextReply": {
+        "theyMightSay": "ಈಗಲೇ ಕಾಲ್ ಮಾಡ್ತೀನಿ (Eegale call maadtini - I am calling right now)",
+        "whatToSayNext": "ಬೇಗ ಬನ್ನಿ (Bega banni - Come quickly please)"
+      },
+      "tags": [
+        "ambulance",
+        "108",
+        "hospital"
+      ],
+      "isEmergency": true
+    },
+    {
+      "id": "qh_6",
+      "category": "quickhelp",
+      "kannada": "ಸ್ವಲ್ಪ ಕುಡಿಯುವ ನೀರು ಕೊಡಿ",
+      "english": "Please give some drinking water.",
+      "pronunciation": "SWAL-pa ku-di-YU-va NEE-ru KO-di",
+      "whenToUse": "Feeling dehydrated, exhausted, or unwell on the road.",
+      "culturalTip": "In Karnataka culture, offering water is considered sacred; any shop or home will readily offer clean water.",
+      "nextReply": {
+        "theyMightSay": "ತಗೊಳ್ಳಿ, ಕುಡಿಯಿರಿ (Tagolli, kudiyiri - Take it, drink)",
+        "whatToSayNext": "ಧನ್ಯವಾದಗಳು ಅಣ್ಣ (Dhanyavaadagalu anna - Thank you brother)"
+      },
+      "tags": [
+        "water",
+        "hospitality",
+        "urgent"
+      ],
+      "isEmergency": true
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "dlg_auto",
+      "title": "Hailing an Auto at Majestic",
+      "scenario": "You just arrived at Majestic station and need to hire an auto to Indiranagar with meter fare.",
+      "category": "travel",
+      "steps": [
+        {
+          "speaker": "Auto Driver",
+          "kannada": "ಎಲ್ಲಿಗೆ ಹೋಗ್ಬೇಕು ಸ್ವಾಮಿ?",
+          "pronunciation": "EL-li-ge HOG-be-ku SWAA-mi?",
+          "english": "Where do you want to go, sir?",
+          "options": [
+            {
+              "kannada": "ಇಂದಿರಾನಗರಕ್ಕೆ, ಮೀಟರ್ ಹಾಕ್ತೀರಾ ಅಣ್ಣ?",
+              "pronunciation": "Indiranagarakke, meter haaktheeraa anna?",
+              "english": "To Indiranagar, will you put the meter, brother?",
+              "feedback": "Perfect! Polite, respectful, and sets clear expectation for meter fare.",
+              "score": 10
+            },
+            {
+              "kannada": "ಹೋಗು, ಬೇಗ ಬಾ!",
+              "pronunciation": "Hogu, bega baa!",
+              "english": "Go, come fast!",
+              "feedback": "Too blunt and disrespectful. Always use polite speech with drivers.",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "speaker": "Auto Driver",
+          "kannada": "ಮೀಟರ್ ಮೇಲೆ ಇಪ್ಪತ್ತು ರೂಪಾಯಿ ಜಾಸ್ತಿ ಕೊಡಿ ಸ್ವಾಮಿ, ಟ್ರಾಫಿಕ್ ಇದೆ.",
+          "pronunciation": "Meter mele IP-pat-tu roo-PAA-yi jaas-ti KO-di swaami, traffic i-de.",
+          "english": "Give twenty rupees extra above meter sir, there is heavy traffic.",
+          "options": [
+            {
+              "kannada": "ಸರಿ ಅಣ್ಣ, ಬನ್ನಿ ಹೋಗೋಣ.",
+              "pronunciation": "Sari anna, banni hogona.",
+              "english": "Okay brother, let's go.",
+              "feedback": "Great compromise! 20 rupees above meter is reasonable during peak hours.",
+              "score": 10
+            },
+            {
+              "kannada": "ಇಲ್ಲ ಅಣ್ಣ, ಮೀಟರ್ ಅಷ್ಟೇ ಕೊಡ್ತೀನಿ.",
+              "pronunciation": "Illa anna, meter ashte kodteeni.",
+              "english": "No brother, I will only pay the meter amount.",
+              "feedback": "Also valid! Assertive yet polite stance.",
+              "score": 9
+            }
+          ]
+        },
+        {
+          "speaker": "You (Arrived at destination)",
+          "kannada": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ ಅಣ್ಣ, ಎಷ್ಟು ಆಯ್ತು?",
+          "pronunciation": "IL-li NIL-li-si AN-na, ESH-tu AAY-thu?",
+          "english": "Stop right here brother, how much did it come to?",
+          "options": [
+            {
+              "kannada": "PhonePe / UPI ಮಾಡ್ತೀನಿ, ಕ್ಯೂಆರ್ ಕೋಡ್ ತೋರಿಸಿ.",
+              "pronunciation": "PhonePe / UPI maadtini, QR code thorisi.",
+              "english": "I will do PhonePe / UPI, show the QR code.",
+              "feedback": "Spot on! The modern Bangalore way to pay seamlessly.",
+              "score": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dlg_darshini",
+      "title": "Ordering Breakfast at a Bangalore Darshini",
+      "scenario": "You walk into an iconic Darshini (like Taaza Thindi or CTR) for morning breakfast.",
+      "category": "food",
+      "steps": [
+        {
+          "speaker": "Token Counter Cashier",
+          "kannada": "ಏನು ಬೇಕು ಸಾರ್?",
+          "pronunciation": "E-nu BE-ku SAAR?",
+          "english": "What do you want, sir?",
+          "options": [
+            {
+              "kannada": "ಒಂದು ಮಸಾಲೆ ದೋಸೆ ಮತ್ತೆ ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ.",
+              "pronunciation": "Ondu masale dose matte ondu filter coffee kodi.",
+              "english": "One masala dosa and one filter coffee please.",
+              "feedback": "Classic order! Clear and natural.",
+              "score": 10
+            },
+            {
+              "kannada": "ತಿಂಡಿ ಕೊಡು.",
+              "pronunciation": "Thindi kodu.",
+              "english": "Give snack.",
+              "feedback": "Grammatically crude. Always specify the item and use 'kodi' (please give).",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "speaker": "Token Counter Cashier",
+          "kannada": "ಒಟ್ಟು ಎಪ್ಪತ್ತು ರೂಪಾಯಿ. ಸ್ಕ್ಯಾನ್ ಮಾಡಿ.",
+          "pronunciation": "OT-tu EP-pat-tu roo-PAA-yi. SCAN maa-di.",
+          "english": "Total seventy rupees. Please scan.",
+          "options": [
+            {
+              "kannada": "ಸ್ಕ್ಯಾನ್ ಮಾಡಿದೆ ನೋಡಿ, ಟೋಕನ್ ಕೊಡಿ.",
+              "pronunciation": "Scan maadide nodi, token kodi.",
+              "english": "I have scanned, see here, please give the token.",
+              "feedback": "Excellent! Next step is collecting your fresh hot dosa at the kitchen counter.",
+              "score": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dlg_medical",
+      "title": "At the Local Pharmacy",
+      "scenario": "You have a seasonal sore throat and mild fever and need medication.",
+      "category": "healthcare",
+      "steps": [
+        {
+          "speaker": "Pharmacist",
+          "kannada": "ಹೇಳಿ ಸರ್, ಏನ್ ತೊಂದರೆ?",
+          "pronunciation": "HE-li sir, EN ton-da-re?",
+          "english": "Tell me sir, what is the trouble?",
+          "options": [
+            {
+              "kannada": "ನನಗೆ ಎರಡು ದಿನದಿಂದ ಗಂಟಲು ನೋವು ಮತ್ತು ಜ್ವರ ಇದೆ.",
+              "pronunciation": "Nanage eradu dinadinda gantalu novu matte jvara ide.",
+              "english": "I have had a sore throat and fever for two days.",
+              "feedback": "Accurately articulates duration and symptoms clearly.",
+              "score": 10
+            }
+          ]
+        },
+        {
+          "speaker": "Pharmacist",
+          "kannada": "ಈ ಮಾತ್ರೆ ತಗೊಳ್ಳಿ, ಊಟದ ನಂತರ ತಗೋಬೇಕು.",
+          "pronunciation": "Ee MAAT-re ta-GOL-li, OO-ta-da NAN-ta-ra ta-go-BE-ku.",
+          "english": "Take this tablet, you must take it after food.",
+          "options": [
+            {
+              "kannada": "ದಿನಕ್ಕೆ ಎಷ್ಟು ಬಾರಿ ತಗೋಬೇಕು?",
+              "pronunciation": "Dinakke eshtu baari tagobeku?",
+              "english": "How many times a day should I take it?",
+              "feedback": "Vital question! Clarifies dosage frequency safely.",
+              "score": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dlg_house",
+      "title": "House Hunting: Inquiring with Landlord",
+      "scenario": "You spot a To-Let board in Koramangala and call the owner to inquire about a 1BHK apartment.",
+      "category": "house",
+      "steps": [
+        {
+          "speaker": "House Owner",
+          "kannada": "ಹಲೋ, ಯಾರು ಮಾತಾಡೋದು?",
+          "pronunciation": "Hello, YAA-ru maa-taa-DO-du?",
+          "english": "Hello, who is speaking?",
+          "options": [
+            {
+              "kannada": "ನಮಸ್ಕಾರ ಸರ್, ಟು-ಲೆಟ್ ಬೋರ್ಡ್ ನೋಡಿ ಕಾಲ್ ಮಾಡಿದೆ. 1 BHK ಖಾಲಿ ಇದೆಯಾ?",
+              "pronunciation": "Namaskara sir, To-Let board nodi call maadide. 1 BHK khaali ideyaa?",
+              "english": "Greetings sir, I called seeing the To-Let board. Is the 1 BHK vacant?",
+              "feedback": "Professional, courteous, and gets straight to the point.",
+              "score": 10
+            }
+          ]
+        },
+        {
+          "speaker": "House Owner",
+          "kannada": "ಹೌದು ಖಾಲಿ ಇದೆ. ನೀವು ಫ್ಯಾಮಿಲಿನಾ ಅಥವಾ ಬ್ಯಾಚುಲರ್ಸ್ ಆ?",
+          "pronunciation": "Haudu khaali ide. Neevu family-naa athava bachelors aa?",
+          "english": "Yes it is vacant. Are you a family or bachelors?",
+          "options": [
+            {
+              "kannada": "ನಾವು ಸಾಫ್ಟ್‌ವೇರ್ ಕಂಪನಿಯಲ್ಲಿ ಕೆಲಸ ಮಾಡ್ತೀವಿ, ಫ್ಯಾಮಿಲಿ ಸರ್.",
+              "pronunciation": "Naavu software company-nalli kelasa maadtivi, family sir.",
+              "english": "We work at a software company, family sir.",
+              "feedback": "Perfect! Mentions professional background and reassurance.",
+              "score": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q1",
+      "situation": "You are standing at a busy bus stop and a red BMTC bus arrives. You want to ask if it heads toward Electronic City.",
+      "question": "Which Kannada phrase should you use?",
+      "options": [
+        "ಈ ಬಸ್ ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಗೆ ಹೋಗುತ್ತಾ? (Ee bus Electronic City ge hoguttaa?)",
+        "ನನಗೆ ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಇಷ್ಟ (Nanage Electronic City ishta)",
+        "ಈ ಬಸ್ ನಿಲ್ಲಿಸಬೇಡಿ (Ee bus nillisabedi)",
+        "ಟಿಕೆಟ್ ಎಲ್ಲಿದೆ? (Ticket ellide?)"
+      ],
+      "correctIndex": 0,
+      "explanation": "'Ee bus [place] ge hoguttaa?' is the universal question to check bus destinations before boarding."
+    },
+    {
+      "id": "q2",
+      "situation": "You buy fresh mangoes at Malleshwaram market. The vendor quotes 150 rupees, but you want to politely ask for a slight reduction.",
+      "question": "What is the polite phrase to request a small discount?",
+      "options": [
+        "ತುಂಬಾ ದುಬಾರಿ, ನಾನು ತಗೊಳಲ್ಲ (Tumba dubaari, naanu tagolalla)",
+        "ಸ್ವಲ್ಪ ಕಮ್ಮಿ ಮಾಡಿ ಅಣ್ಣ (Swalpa kammi maadi anna)",
+        "ನನಗೆ ದುಡ್ಡು ಇಲ್ಲ (Nanage duddu illa)",
+        "ಬೇರೆ ಅಂಗಡಿ ಎಲ್ಲಿದೆ? (Bere angadi ellide?)"
+      ],
+      "correctIndex": 1,
+      "explanation": "'Swalpa kammi maadi anna' is respectful and universally effective across Karnataka markets."
+    },
+    {
+      "id": "q3",
+      "situation": "You are at a local cafe and finished your meal. You don't have cash and want to pay digitally.",
+      "question": "How do you ask if they accept PhonePe or Google Pay?",
+      "options": [
+        "ಕ್ಯಾಶ್ ಮಾತ್ರ ಕೊಡ್ತೀನಿ (Cash maathra kodteeni)",
+        "ಫೋನ್ ಎಲ್ಲಿದೆ? (Phone ellide?)",
+        "UPI / PhonePe ತಗೋತೀರಾ? (UPI / PhonePe tagotheeraa?)",
+        "ನಾನು ತಿಂಡಿ ತಿಂದೆ (Naanu thindi thinde)"
+      ],
+      "correctIndex": 2,
+      "explanation": "'UPI / PhonePe tagotheeraa?' is the standard way to ask if digital QR payment is accepted."
+    },
+    {
+      "id": "q4",
+      "situation": "You are feeling unwell with a high temperature and visit a clinic.",
+      "question": "What does 'Nanage jvara ide' (ನನಗೆ ಜ್ವರ ಇದೆ) mean?",
+      "options": [
+        "I am feeling hungry",
+        "I have a fever",
+        "I want to sleep",
+        "Where is the medicine shop?"
+      ],
+      "correctIndex": 1,
+      "explanation": "'Jvara' (ಜ್ವರ) translates directly to fever in Kannada."
+    },
+    {
+      "id": "q5",
+      "situation": "A local elder speaks very quickly in Kannada and you cannot follow.",
+      "question": "Which phrase asks them politely to slow down?",
+      "options": [
+        "ಮಾತನಾಡಬೇಡಿ (Maathanaadabedi)",
+        "ದಯವಿಟ್ಟು ನಿಧಾನವಾಗಿ ಮಾತನಾಡಿ (Dayavittu nidhaanavaagi maathanaadi)",
+        "ನನಗೆ ಅರ್ಥ ಆಯ್ತು (Nanage artha aaythu)",
+        "ಜೋರಾಗಿ ಹೇಳಿ (Joraagi heli)"
+      ],
+      "correctIndex": 1,
+      "explanation": "'Nidhaanavaagi' means slowly. 'Dayavittu nidhaanavaagi maathanaadi' is extremely courteous."
+    },
+    {
+      "id": "q6",
+      "situation": "You enter an auto-rickshaw and want to insist on lawful metering rather than flat price gouging.",
+      "question": "What is the key phrase?",
+      "options": [
+        "ಮೀಟರ್ ಪ್ರಕಾರ ಬನ್ನಿ ಸರ್ (Meter prakara banni sir)",
+        "ಖಾಲಿ ಗಾಡಿ ಕೊಡಿ (Khaali gaadi kodi)",
+        "ಬಲಕ್ಕೆ ಹೋಗಿ (Balakke hogi)",
+        "ಎಷ್ಟು ಹೊತ್ತು ಬೇಕು? (Eshtu hottu beku?)"
+      ],
+      "correctIndex": 0,
+      "explanation": "'Meter prakara banni' directly tells the driver to commute according to the government meter."
+    },
+    {
+      "id": "q7",
+      "situation": "You want to say 'Did you have food?' as a warm gesture of care to a coworker.",
+      "question": "What is Karnataka's most famous everyday cultural phrase?",
+      "options": [
+        "ಊಟ ಆಯ್ತಾ? (Oota aaythaa?)",
+        "ಎಲ್ಲಿಗೆ ಹೋಗ್ತೀರಾ? (Ellige hogteera?)",
+        "ಏನು ಸಮಾಚಾರ? (Enu samaachara?)",
+        "ಮನೆ ಎಲ್ಲಿದೆ? (Mane ellide?)"
+      ],
+      "correctIndex": 0,
+      "explanation": "'Oota aaytha?' (Did you have food?) is the supreme Kannada expression of friendship and care."
+    },
+    {
+      "id": "q8",
+      "situation": "What does the popular Bangalore phrase 'Sakkath' (ಸಕ್ಕತ್) mean?",
+      "question": "Translate 'Sakkath' into English:",
+      "options": [
+        "Slow / Boring",
+        "Awesome / Fantastic / Superb",
+        "Bitter taste",
+        "Expensive"
+      ],
+      "correctIndex": 1,
+      "explanation": "'Sakkath' means awesome, fantastic, or superb (e.g. 'Sakkath coffee!')."
+    }
+  ],
+  "visualCards": [
+    {
+      "id": "vis_auto",
+      "icon": "fa-taxi",
+      "emoji": "🛺",
+      "title": "ಮೀಟರ್ ಹಾಕಿ",
+      "subtitle": "Put Meter",
+      "audioText": "ಮೀಟರ್ ಪ್ರಕಾರ ಬನ್ನಿ ಅಣ್ಣ",
+      "pronounce": "Meter prakaara banni anna",
+      "english": "Please come by meter, brother",
+      "color": "#f59e0b",
+      "category": "travel"
+    },
+    {
+      "id": "vis_bus",
+      "icon": "fa-bus",
+      "emoji": "🚌",
+      "title": "ಮೆಜೆಸ್ಟಿಕ್ ಬಸ್",
+      "subtitle": "Majestic Bus",
+      "audioText": "ಈ ಬಸ್ ಮೆಜೆಸ್ಟಿಕ್ ಗೆ ಹೋಗುತ್ತಾ?",
+      "pronounce": "Ee bus Majestic ge hogutthaa?",
+      "english": "Does this bus go to Majestic?",
+      "color": "#f59e0b",
+      "category": "travel"
+    },
+    {
+      "id": "vis_stop",
+      "icon": "fa-hand",
+      "emoji": "🛑",
+      "title": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
+      "subtitle": "Stop Here",
+      "audioText": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ ಅಣ್ಣ, ನಾನು ಇಳಿಯಬೇಕು",
+      "pronounce": "Illi nillisi anna, naanu iliyabeku",
+      "english": "Stop here brother, I need to get down",
+      "color": "#ef4444",
+      "category": "travel"
+    },
+    {
+      "id": "vis_coffee",
+      "icon": "fa-mug-hot",
+      "emoji": "☕",
+      "title": "ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "subtitle": "Filter Coffee",
+      "audioText": "ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ",
+      "pronounce": "Ondu filter coffee kodi",
+      "english": "One filter coffee please",
+      "color": "#f97316",
+      "category": "food"
+    },
+    {
+      "id": "vis_dosa",
+      "icon": "fa-utensils",
+      "emoji": "🥞",
+      "title": "ಮಸಾಲೆ ದೋಸೆ",
+      "subtitle": "Masala Dosa",
+      "audioText": "ಒಂದು ಮಸಾಲೆ ದೋಸೆ ಕೊಡಿ",
+      "pronounce": "Ondu masale dose kodi",
+      "english": "One masala dosa please",
+      "color": "#f97316",
+      "category": "food"
+    },
+    {
+      "id": "vis_water",
+      "icon": "fa-glass-water",
+      "emoji": "💧",
+      "title": "ಕುಡಿಯುವ ನೀರು",
+      "subtitle": "Drinking Water",
+      "audioText": "ಕುಡಿಯುವ ಬಿಸಿ ನೀರು ಕೊಡಿ",
+      "pronounce": "Kudiyuva bisi neeru kodi",
+      "english": "Please give drinking water",
+      "color": "#06b6d4",
+      "category": "food"
+    },
+    {
+      "id": "vis_price",
+      "icon": "fa-tag",
+      "emoji": "💵",
+      "title": "ಎಷ್ಟು ರೂಪಾಯಿ?",
+      "subtitle": "How Much?",
+      "audioText": "ಇದು ಎಷ್ಟು ರೂಪಾಯಿ ಅಣ್ಣ?",
+      "pronounce": "Idu eshtu rupaayi anna?",
+      "english": "How much rupees is this?",
+      "color": "#10b981",
+      "category": "shopping"
+    },
+    {
+      "id": "vis_upi",
+      "icon": "fa-qrcode",
+      "emoji": "📱",
+      "title": "PhonePe / GPay",
+      "subtitle": "Online Scanner",
+      "audioText": "PhonePe ಅಥವಾ Google Pay ತಗೋತೀರಾ?",
+      "pronounce": "PhonePe athava Google Pay tagotheera?",
+      "english": "Do you accept PhonePe / Google Pay?",
+      "color": "#3b82f6",
+      "category": "shopping"
+    },
+    {
+      "id": "vis_bargain",
+      "icon": "fa-handshake",
+      "emoji": "🤝",
+      "title": "ಕಮ್ಮಿ ಮಾಡಿ",
+      "subtitle": "Reduce Price",
+      "audioText": "ಸ್ವಲ್ಪ ಕಮ್ಮಿ ಮಾಡಿ ಅಣ್ಣ",
+      "pronounce": "Swalpa kammi maadi anna",
+      "english": "Please reduce price a little, brother",
+      "color": "#10b981",
+      "category": "shopping"
+    },
+    {
+      "id": "vis_hospital",
+      "icon": "fa-hospital",
+      "emoji": "🏥",
+      "title": "ಆಸ್ಪತ್ರೆ ಎಲ್ಲಿದೆ?",
+      "subtitle": "Hospital Where?",
+      "audioText": "ಹತ್ತಿರದ ಆಸ್ಪತ್ರೆ ಎಲ್ಲಿದೆ?",
+      "pronounce": "Hatthirada aaspatre ellide?",
+      "english": "Where is the nearest hospital?",
+      "color": "#ef4444",
+      "category": "healthcare"
+    },
+    {
+      "id": "vis_medicine",
+      "icon": "fa-pills",
+      "emoji": "💊",
+      "title": "ಜ್ವರದ ಮಾತ್ರೆ",
+      "subtitle": "Fever Medicine",
+      "audioText": "ಜ್ವರ ಮತ್ತು ತಲೆನೋವು ಇದೆ, ಮಾತ್ರೆ ಕೊಡಿ",
+      "pronounce": "Jvara matte talenovu ide, maatre kodi",
+      "english": "I have fever and headache, give medicine",
+      "color": "#ec4899",
+      "category": "healthcare"
+    },
+    {
+      "id": "vis_washroom",
+      "icon": "fa-restroom",
+      "emoji": "🚻",
+      "title": "ಶೌಚಾಲಯ",
+      "subtitle": "Washroom",
+      "audioText": "ಶೌಚಾಲಯ ಅಥವಾ ವಾಶ್‌ರೂಂ ಎಲ್ಲಿದೆ?",
+      "pronounce": "Shouchalaya athava washroom ellide?",
+      "english": "Where is the washroom / toilet?",
+      "color": "#06b6d4",
+      "category": "quickhelp"
+    },
+    {
+      "id": "vis_sos",
+      "icon": "fa-triangle-exclamation",
+      "emoji": "🚨",
+      "title": "ತುರ್ತು ಸಹಾಯ!",
+      "subtitle": "Emergency Help!",
+      "audioText": "ದಯವಿಟ್ಟು ಸಹಾಯ ಮಾಡಿ! ನನಗೆ ತೊಂದರೆ ಆಗಿದೆ!",
+      "pronounce": "Dayavittu sahaaya maadi! Nanage tondare aagide!",
+      "english": "Please help me! I am in emergency trouble!",
+      "color": "#f43f5e",
+      "category": "quickhelp"
+    },
+    {
+      "id": "vis_police",
+      "icon": "fa-shield-halved",
+      "emoji": "👮",
+      "title": "ಪೊಲೀಸ್ (112)",
+      "subtitle": "Call Police",
+      "audioText": "ಪೊಲೀಸರಿಗೆ 112 ಫೋನ್ ಮಾಡಿ, ತುರ್ತು ಇದೆ",
+      "pronounce": "Police-rige 112 phone maadi, thurtu ide",
+      "english": "Please call 112 police, it is urgent",
+      "color": "#3b82f6",
+      "category": "quickhelp"
+    },
+    {
+      "id": "vis_ambulance",
+      "icon": "fa-truck-medical",
+      "emoji": "🚑",
+      "title": "ಅಂಬ್ಯುಲೆನ್ಸ್ (108)",
+      "subtitle": "Call Ambulance",
+      "audioText": "ಬೇಗ ಅಂಬ್ಯುಲೆನ್ಸ್‌ಗೆ 108 ಕರೆ ಮಾಡಿ",
+      "pronounce": "Bega ambulance-ge 108 kare maadi",
+      "english": "Please call 108 ambulance quickly",
+      "color": "#ef4444",
+      "category": "quickhelp"
+    },
+    {
+      "id": "vis_yes",
+      "icon": "fa-circle-check",
+      "emoji": "👍",
+      "title": "ಹೌದು / ಸರಿ",
+      "subtitle": "Yes / OK",
+      "audioText": "ಹೌದು, ಸರಿ ಅಣ್ಣ",
+      "pronounce": "Haudu, sari anna",
+      "english": "Yes, alright brother",
+      "color": "#10b981",
+      "category": "social"
+    },
+    {
+      "id": "vis_no",
+      "icon": "fa-circle-xmark",
+      "emoji": "👎",
+      "title": "ಬೇಡ / ಇಲ್ಲ",
+      "subtitle": "No / Dont want",
+      "audioText": "ಬೇಡ ಅಣ್ಣ, ಬೇಡ",
+      "pronounce": "Beda anna, beda",
+      "english": "No brother, I dont want",
+      "color": "#ef4444",
+      "category": "social"
+    },
+    {
+      "id": "vis_thanks",
+      "icon": "fa-hands-praying",
+      "emoji": "🙏",
+      "title": "ಧನ್ಯವಾದಗಳು",
+      "subtitle": "Thank You",
+      "audioText": "ತುಂಬಾ ಧನ್ಯವಾದಗಳು ಅಣ್ಣ!",
+      "pronounce": "Tumba dhanyavaadagalu anna!",
+      "english": "Thank you very much brother!",
+      "color": "#8b5cf6",
+      "category": "social"
+    }
+  ]
+}
