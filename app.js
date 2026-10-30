@@ -152,24 +152,26 @@
         if (catRes.ok && phraseRes.ok) {
           const cats = await catRes.json();
           const pData = await phraseRes.json();
-          appData = {
-            categories: cats,
-            phrases: pData.phrases || [],
-            builderVocabulary: bldRes.ok ? await bldRes.json() : {},
-            slang: slgRes.ok ? await slgRes.json() : [],
-            numbers: numRes.ok ? await numRes.json() : [],
-            alphabet: alpRes.ok ? await alpRes.json() : [],
-            magicWords: mgcRes.ok ? await mgcRes.json() : [],
-            dialogues: dlgRes.ok ? await dlgRes.json() : [],
-            quizzes: qzRes.ok ? await qzRes.json() : [],
-            visualCards: visRes.ok ? await visRes.json() : [],
-            survival: (survRes && survRes.ok) ? await survRes.json() : null
-          };
-          if (!appData.categories.some(c => c.id === 'all')) {
-            appData.categories.unshift({ id: "all", name: "All Situations", kannada: "ಎಲ್ಲಾ", icon: "fa-border-all" });
+          if (cats && cats.length > 0) {
+            appData = {
+              categories: cats,
+              phrases: pData.phrases || [],
+              builderVocabulary: bldRes.ok ? await bldRes.json() : {},
+              slang: slgRes.ok ? await slgRes.json() : [],
+              numbers: numRes.ok ? await numRes.json() : [],
+              alphabet: alpRes.ok ? await alpRes.json() : [],
+              magicWords: mgcRes.ok ? await mgcRes.json() : [],
+              dialogues: dlgRes.ok ? await dlgRes.json() : [],
+              quizzes: qzRes.ok ? await qzRes.json() : [],
+              visualCards: visRes.ok ? await visRes.json() : [],
+              survival: (survRes && survRes.ok) ? await survRes.json() : null
+            };
+            if (!appData.categories.some(c => c.id === 'all')) {
+              appData.categories.unshift({ id: "all", name: "All Situations", kannada: "ಎಲ್ಲಾ", icon: "fa-border-all" });
+            }
+            await loadDailyPhrase();
+            return;
           }
-          await loadDailyPhrase();
-          return;
         }
       } catch (err) {
         console.warn("Backend API loading error, falling back to static dataset:", err);
@@ -178,7 +180,10 @@
 
     // Static fallback for offline PWA operation:
     try {
-      const response = await fetch('data/phrases.json');
+      let response = await fetch('data/phrases.json');
+      if (!response.ok) {
+        response = await fetch('phrases.json');
+      }
       if (response.ok) {
         appData = await response.json();
         if (appData.categories && !appData.categories.some(c => c.id === 'all')) {

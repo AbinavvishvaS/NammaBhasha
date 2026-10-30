@@ -3,23 +3,30 @@
  * Cache-First with Stale-While-Revalidate Strategy
  */
 
-const CACHE_NAME = 'nammabhasha-v1.3.0';
+const CACHE_NAME = 'nammabhasha-v1.3.1';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
   './logo.jpg',
+  './manifest.json',
   './data/phrases.json',
-  './manifest.json'
+  './phrases.json'
 ];
 
-// Install Event: Pre-cache core offline assets
+// Install Event: Pre-cache core offline assets safely
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CACHE_NAME).then(async (cache) => {
       console.log('[ServiceWorker] Pre-caching offline assets');
-      return cache.addAll(STATIC_ASSETS);
+      await Promise.allSettled(
+        STATIC_ASSETS.map((asset) =>
+          cache.add(asset).catch((err) => {
+            console.warn('[ServiceWorker] Asset cache skipped:', asset, err);
+          })
+        )
+      );
     }).then(() => self.skipWaiting())
   );
 });

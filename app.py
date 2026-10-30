@@ -10,13 +10,28 @@ from flask import Flask, jsonify, request, send_from_directory
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 
-# Load phrases dataset
-DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "phrases.json")
+# Load phrases dataset with multiple candidate path resolutions (root & data/ subfolder)
+DATA_CANDIDATE_PATHS = [
+    os.path.join(os.path.dirname(__file__), "data", "phrases.json"),
+    os.path.join(os.path.dirname(__file__), "phrases.json"),
+    os.path.join(os.getcwd(), "data", "phrases.json"),
+    os.path.join(os.getcwd(), "phrases.json"),
+]
+
+def get_data_filepath():
+    for p in DATA_CANDIDATE_PATHS:
+        if os.path.exists(p):
+            return p
+    return None
 
 def load_data():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+    target_path = get_data_filepath()
+    if target_path and os.path.exists(target_path):
+        try:
+            with open(target_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"[!] Error reading phrases data from {target_path}: {e}")
     return {"categories": [], "phrases": [], "dialogues": [], "quizzes": []}
 
 @app.route("/")
@@ -753,6 +768,13 @@ def calculate_auto_fare():
 @app.route("/<path:path>")
 def serve_static_assets(path):
     """Serves static files (styles.css, app.js, logo.jpg, manifest.json, etc.)."""
+    # Dynamic fallback: serve phrases.json regardless of whether requested as data/phrases.json or phrases.json
+    if path in ("data/phrases.json", "phrases.json"):
+        data_path = get_data_filepath()
+        if data_path and os.path.exists(data_path):
+            dir_name = os.path.dirname(data_path) or "."
+            file_name = os.path.basename(data_path)
+            return send_from_directory(dir_name, file_name, mimetype="application/json")
     return send_from_directory(".", path)
 
 if __name__ == "__main__":
