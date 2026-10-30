@@ -81,14 +81,27 @@
     } catch (e) {}
   }
 
-  // --- Voice Preloading ---
+  // --- Voice Preloading (robust: handles Chrome async voice loading) ---
   function initVoices() {
-    if ('speechSynthesis' in window) {
-      availableVoices = window.speechSynthesis.getVoices();
-      window.speechSynthesis.onvoiceschanged = () => {
-        availableVoices = window.speechSynthesis.getVoices();
-      };
+    if (!('speechSynthesis' in window)) return;
+
+    function loadVoices() {
+      const v = window.speechSynthesis.getVoices();
+      if (v && v.length > 0) {
+        availableVoices = v;
+      }
     }
+
+    loadVoices(); // immediate attempt (Firefox returns synchronously)
+
+    // Chrome fires onvoiceschanged when voices are ready asynchronously
+    window.speechSynthesis.onvoiceschanged = () => {
+      loadVoices();
+    };
+
+    // Extra safety: retry after 500 ms and 1500 ms (some browsers are slow)
+    setTimeout(loadVoices, 500);
+    setTimeout(loadVoices, 1500);
   }
 
   // --- Initialize App ---
@@ -357,6 +370,24 @@
         openFavoritesModal();
       });
     }
+
+    // ── Clear Cache & Reload button ──
+    const clearCacheBtn = document.getElementById('btnClearCache');
+    if (clearCacheBtn) {
+      clearCacheBtn.addEventListener('click', async () => {
+        clearCacheBtn.disabled = true;
+        showToast('🔄 Clearing cache… reloading with latest version!', 'info');
+        if ('caches' in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map(k => caches.delete(k)));
+        }
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(r => r.unregister()));
+        }
+        setTimeout(() => location.reload(true), 800);
+      });
+    }
   }
 
   function switchView(viewName) {
@@ -620,74 +651,125 @@
   // --- Text-to-Speech ---
   function playSpeechAudio(text, rate = 1.0, triggerBtn = null, phoneticFallback = '') {
     if (!('speechSynthesis' in window)) {
-      alert("Text-to-Speech is not supported in this browser.");
+      showToast('🔇 Text-to-Speech not supported in this browser. Try Chrome or Edge.', 'warning');
       return;
     }
 
-    try {
-      window.speechSynthesis.cancel();
-    } catch (e) {}
+    // ── Chrome/Edge idle-pause bug fix ──────────────────────────────
+    // Chrome silently suspends speechSynthesis after ~15 sec of inactivity.
+    // cancel() + resume() resets it before every new utterance.
+    try { window.speechSynthesis.cancel(); } catch (e) {}
 
     // Safeguard against undefined, null, or literal string 'undefined'
-    let cleanText = (typeof text === 'string' ? text.trim() : '') || '';
+    let cleanText     = (typeof text             === 'string' ? text.trim()             : '') || '';
     let cleanPhonetic = (typeof phoneticFallback === 'string' ? phoneticFallback.trim() : '') || '';
 
-    if (cleanText === 'undefined' || cleanText === 'null') cleanText = '';
+    if (cleanText     === 'undefined' || cleanText     === 'null') cleanText     = '';
     if (cleanPhonetic === 'undefined' || cleanPhonetic === 'null') cleanPhonetic = '';
 
-    // If cleanText is empty, fall back to phonetic
-    if (!cleanText && cleanPhonetic) cleanText = cleanPhonetic;
-    if (!cleanPhonetic && cleanText) cleanPhonetic = cleanText;
+    // Cross-field fallback
+    if (!cleanText     && cleanPhonetic) cleanText     = cleanPhonetic;
+    if (!cleanPhonetic && cleanText)     cleanPhonetic = cleanText;
 
     if (!cleanText) {
-      console.warn("playSpeechAudio: No valid text to speak.");
+      console.warn('playSpeechAudio: No valid text to speak.');
       return;
     }
 
-    // Refresh voice list if empty
-    const voices = availableVoices.length > 0 ? availableVoices : window.speechSynthesis.getVoices();
-    const kannadaVoice = voices.find(v => v.lang && (v.lang.startsWith('kn') || v.lang.toLowerCase().includes('kannada')));
-    const indianVoice = voices.find(v => v.lang && (v.lang.includes('en-IN') || v.lang.includes('hi-IN') || v.name.toLowerCase().includes('india')));
+    // ── Voice selection: Kannada → Indian English → Hindi → ANY → en-US ──
+    const voices = availableVoices.length > 0
+      ? availableVoices
+      : window.speechSynthesis.getVoices();
+
+    const kannadaVoice = voices.find(v =>
+      v.lang && (v.lang.startsWith('kn') || v.lang.toLowerCase().includes('kannada')));
+    const indianVoice = voices.find(v =>
+      v.lang && (v.lang.includes('en-IN') || v.lang.includes('hi-IN') ||
+                 (v.name && v.name.toLowerCase().includes('india'))));
+    const anyVoice = voices.length > 0 ? voices[0] : null;   // absolute last resort
 
     const utterance = new SpeechSynthesisUtterance();
-    utterance.rate = Math.max(0.6, Math.min(1.4, rate));
+    utterance.rate  = Math.max(0.6, Math.min(1.4, rate));
     utterance.pitch = 1.0;
+    utterance.volume = 1.0;
 
     if (kannadaVoice) {
+      // Best: native kn-IN voice (Android/some desktops)
       utterance.voice = kannadaVoice;
-      utterance.lang = kannadaVoice.lang;
-      utterance.text = cleanText;
+      utterance.lang  = kannadaVoice.lang;
+      utterance.text  = cleanText;
     } else {
-      // If no native Kannada voice is installed, speak the phonetic transliteration guide
-      const spoken = cleanPhonetic ? cleanPhonetic.replace(/[-_]/g, ' ').replace(/[?]/g, '').trim() : cleanText;
-      utterance.text = spoken || "Namaskara";
+      // No Kannada TTS on this device → speak the phonetic Roman guide
+      const spokenText = cleanPhonetic
+        ? cleanPhonetic.replace(/[-_]/g, ' ').replace(/[^\x00-\x7F\u0C00-\u0C7F]/g, '').trim()
+        : cleanText;
+      utterance.text = spokenText || 'Namaskara';
       if (indianVoice) {
         utterance.voice = indianVoice;
-        utterance.lang = indianVoice.lang || 'en-IN';
+        utterance.lang  = indianVoice.lang || 'en-IN';
+      } else if (anyVoice) {
+        utterance.voice = anyVoice;
+        utterance.lang  = anyVoice.lang || 'en-US';
       } else {
         utterance.lang = 'en-US';
       }
     }
 
+    // ── Visual "playing" state ───────────────────────────────────────
     if (triggerBtn) {
-      triggerBtn.classList.add('playing');
-      triggerBtn.classList.add('speaking');
+      triggerBtn.classList.add('playing', 'speaking');
+      triggerBtn.setAttribute('aria-label', 'Playing audio…');
     }
+
+    utterance.onstart = () => {
+      if (triggerBtn) triggerBtn.classList.add('playing', 'speaking');
+    };
 
     utterance.onend = () => {
       if (triggerBtn) {
-        triggerBtn.classList.remove('playing');
-        triggerBtn.classList.remove('speaking');
-      }
-    };
-    utterance.onerror = () => {
-      if (triggerBtn) {
-        triggerBtn.classList.remove('playing');
-        triggerBtn.classList.remove('speaking');
+        triggerBtn.classList.remove('playing', 'speaking');
+        triggerBtn.removeAttribute('aria-label');
       }
     };
 
-    window.speechSynthesis.speak(utterance);
+    utterance.onerror = (ev) => {
+      if (triggerBtn) {
+        triggerBtn.classList.remove('playing', 'speaking');
+        triggerBtn.removeAttribute('aria-label');
+      }
+      // Only warn for real errors (not 'interrupted' which is normal)
+      if (ev.error && ev.error !== 'interrupted' && ev.error !== 'canceled') {
+        console.warn('SpeechSynthesis error:', ev.error, '| text:', utterance.text);
+      }
+    };
+
+    // ── CRITICAL: resume() before speak() fixes Chrome's idle-suspend bug ──
+    try { window.speechSynthesis.resume(); } catch (e) {}
+    try { window.speechSynthesis.speak(utterance); } catch (e) {
+      console.error('speechSynthesis.speak failed:', e);
+    }
+  }
+
+  // ── Lightweight toast notification (used by playSpeechAudio & others) ──
+  function showToast(msg, type = 'info') {
+    let toast = document.getElementById('namba-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'namba-toast';
+      toast.style.cssText = [
+        'position:fixed;bottom:80px;left:50%;transform:translateX(-50%)',
+        'background:#1a1a2e;color:#fff;padding:10px 20px;border-radius:24px',
+        'font-size:14px;z-index:99999;opacity:0;transition:opacity .3s',
+        'pointer-events:none;max-width:90vw;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.4)'
+      ].join(';');
+      document.body.appendChild(toast);
+    }
+    const colors = { info: '#6C63FF', success: '#00C896', warning: '#FF6B35', error: '#e74c3c' };
+    toast.style.background = colors[type] || colors.info;
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => { toast.style.opacity = '0'; }, 3000);
   }
 
   // --- Speech Recognition ---

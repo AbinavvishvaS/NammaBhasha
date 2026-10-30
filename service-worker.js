@@ -3,7 +3,7 @@
  * Cache-First with Stale-While-Revalidate Strategy
  */
 
-const CACHE_NAME = 'nammabhasha-v1.3.1';
+const CACHE_NAME = 'nammabhasha-v1.4.0';
 const STATIC_ASSETS = [
   './',
   './index.html',
