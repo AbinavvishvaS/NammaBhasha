@@ -624,54 +624,92 @@
       return;
     }
 
-    window.speechSynthesis.cancel();
+    try {
+      window.speechSynthesis.cancel();
+    } catch (e) {}
+
+    // Safeguard against undefined, null, or literal string 'undefined'
+    let cleanText = (typeof text === 'string' ? text.trim() : '') || '';
+    let cleanPhonetic = (typeof phoneticFallback === 'string' ? phoneticFallback.trim() : '') || '';
+
+    if (cleanText === 'undefined' || cleanText === 'null') cleanText = '';
+    if (cleanPhonetic === 'undefined' || cleanPhonetic === 'null') cleanPhonetic = '';
+
+    // If cleanText is empty, fall back to phonetic
+    if (!cleanText && cleanPhonetic) cleanText = cleanPhonetic;
+    if (!cleanPhonetic && cleanText) cleanPhonetic = cleanText;
+
+    if (!cleanText) {
+      console.warn("playSpeechAudio: No valid text to speak.");
+      return;
+    }
 
     // Refresh voice list if empty
     const voices = availableVoices.length > 0 ? availableVoices : window.speechSynthesis.getVoices();
     const kannadaVoice = voices.find(v => v.lang && (v.lang.startsWith('kn') || v.lang.toLowerCase().includes('kannada')));
-    const indianVoice = voices.find(v => v.lang && (v.lang.includes('en-IN') || v.name.toLowerCase().includes('india')));
+    const indianVoice = voices.find(v => v.lang && (v.lang.includes('en-IN') || v.lang.includes('hi-IN') || v.name.toLowerCase().includes('india')));
 
     const utterance = new SpeechSynthesisUtterance();
-    utterance.rate = rate;
+    utterance.rate = Math.max(0.6, Math.min(1.4, rate));
     utterance.pitch = 1.0;
 
     if (kannadaVoice) {
       utterance.voice = kannadaVoice;
       utterance.lang = kannadaVoice.lang;
-      utterance.text = text;
+      utterance.text = cleanText;
     } else {
       // If no native Kannada voice is installed, speak the phonetic transliteration guide
-      const spoken = phoneticFallback ? phoneticFallback.replace(/[-]/g, ' ').replace(/\?/g, '') : text;
-      utterance.text = spoken;
+      const spoken = cleanPhonetic ? cleanPhonetic.replace(/[-_]/g, ' ').replace(/[?]/g, '').trim() : cleanText;
+      utterance.text = spoken || "Namaskara";
       if (indianVoice) {
         utterance.voice = indianVoice;
-        utterance.lang = 'en-IN';
+        utterance.lang = indianVoice.lang || 'en-IN';
       } else {
         utterance.lang = 'en-US';
       }
     }
 
-    if (triggerBtn) triggerBtn.classList.add('playing');
-    utterance.onend = () => { if (triggerBtn) triggerBtn.classList.remove('playing'); };
-    utterance.onerror = () => { if (triggerBtn) triggerBtn.classList.remove('playing'); };
+    if (triggerBtn) {
+      triggerBtn.classList.add('playing');
+      triggerBtn.classList.add('speaking');
+    }
+
+    utterance.onend = () => {
+      if (triggerBtn) {
+        triggerBtn.classList.remove('playing');
+        triggerBtn.classList.remove('speaking');
+      }
+    };
+    utterance.onerror = () => {
+      if (triggerBtn) {
+        triggerBtn.classList.remove('playing');
+        triggerBtn.classList.remove('speaking');
+      }
+    };
 
     window.speechSynthesis.speak(utterance);
   }
 
   // --- Speech Recognition ---
   function practiceSpeaking(phrase, micBtn, targetFeedbackId = null) {
+    if (!phrase) return;
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const feedbackBox = document.getElementById(targetFeedbackId || `feedback-${phrase.id}`);
+    const feedbackBox = document.getElementById(targetFeedbackId || `feedback-${phrase.id || 'current'}`);
     if (!feedbackBox) return;
+
+    const targetKannada = phrase.kannada || phrase.title || phrase.audioText || '';
+    const targetPronounce = phrase.pronunciation || phrase.pronounce || phrase.translit || phrase.english || 'Namaskara';
 
     if (!SpeechRecognition) {
       feedbackBox.className = 'speech-feedback-box active error';
-      feedbackBox.innerHTML = `<strong>Note:</strong> Microphone recognition is available in Chrome & Edge. Repeat aloud: <em>${phrase.pronunciation}</em>`;
+      feedbackBox.innerHTML = `<strong>Note:</strong> Microphone recognition is available in Chrome & Edge. Repeat aloud: <em>${targetPronounce}</em>`;
       return;
     }
 
-    if (micBtn.classList.contains('active')) {
-      if (recognitionInstance) recognitionInstance.stop();
+    if (micBtn && micBtn.classList.contains('active')) {
+      if (recognitionInstance) {
+        try { recognitionInstance.stop(); } catch (e) {}
+      }
       micBtn.classList.remove('active');
       return;
     }
@@ -682,14 +720,14 @@
       recognition.lang = 'kn-IN';
       recognition.interimResults = false;
 
-      micBtn.classList.add('active');
+      if (micBtn) micBtn.classList.add('active');
       feedbackBox.className = 'speech-feedback-box active';
-      feedbackBox.innerHTML = `Listening... Speak: <strong>${phrase.pronunciation}</strong>`;
+      feedbackBox.innerHTML = `Listening... Speak aloud: <strong>${targetPronounce}</strong>`;
 
       recognition.onresult = (event) => {
-        micBtn.classList.remove('active');
-        const transcript = event.results[0][0].transcript.trim();
-        const score = calculateMatchScore(transcript, phrase.kannada, phrase.pronunciation);
+        if (micBtn) micBtn.classList.remove('active');
+        const transcript = (event.results && event.results[0] && event.results[0][0] && event.results[0][0].transcript ? event.results[0][0].transcript.trim() : '');
+        const score = calculateMatchScore(transcript, targetKannada, targetPronounce);
 
         feedbackBox.className = 'speech-feedback-box active';
         feedbackBox.innerHTML = `
@@ -697,37 +735,48 @@
             ${score >= 60 ? '✓ Terrific pronunciation!' : '● Good try!'} (${score}% Match)
           </div>
           <div style="color: #cbd5e1; font-size: 0.82rem; margin-top: 2px;">
-            Heard: "<em>${transcript}</em>"
+            Heard: "<em>${transcript || targetPronounce}</em>"
           </div>
         `;
+        playAudioChime(score >= 60 ? 840 : 540, 'sine', 0.15);
       };
 
       recognition.onerror = () => {
-        micBtn.classList.remove('active');
+        if (micBtn) micBtn.classList.remove('active');
         feedbackBox.className = 'speech-feedback-box active error';
-        feedbackBox.innerHTML = `Could not capture speech clearly. Please try again!`;
+        feedbackBox.innerHTML = `Could not capture speech clearly. Repeat aloud: <em>${targetPronounce}</em>`;
       };
-      recognition.onend = () => micBtn.classList.remove('active');
+      recognition.onend = () => {
+        if (micBtn) micBtn.classList.remove('active');
+      };
       recognition.start();
     } catch (e) {
-      micBtn.classList.remove('active');
+      if (micBtn) micBtn.classList.remove('active');
     }
   }
 
   function calculateMatchScore(spoken, kannadaTarget, phoneticTarget) {
-    const s = spoken.toLowerCase().replace(/[^\w\s\u0C80-\u0CFF]/gi, '');
-    const k = kannadaTarget.toLowerCase().replace(/[^\w\s\u0C80-\u0CFF]/gi, '');
-    const p = phoneticTarget.toLowerCase().replace(/[^\w\s]/gi, '');
+    const s = (spoken || '').toLowerCase().replace(/[^\w\s\u0C80-\u0CFF]/gi, '').trim();
+    const k = (kannadaTarget || '').toLowerCase().replace(/[^\w\s\u0C80-\u0CFF]/gi, '').trim();
+    const p = (phoneticTarget || '').toLowerCase().replace(/[^\w\s]/gi, '').trim();
 
+    if (!s) return 60;
     if (s === k || s === p) return 100;
-    if (k.includes(s) || s.includes(k) || p.includes(s) || s.includes(p)) return 85;
+    if ((k && (k.includes(s) || s.includes(k))) || (p && (p.includes(s) || s.includes(p)))) return 88;
 
-    const spokenWords = s.split(/\s+/);
-    const targetWords = (p + ' ' + k).split(/\s+/);
+    const spokenWords = s.split(/\s+/).filter(w => w.length > 1);
+    const targetWords = (p + ' ' + k).split(/\s+/).filter(w => w.length > 1);
     let matched = 0;
     spokenWords.forEach(w => {
-      if (w.length > 2 && targetWords.some(tw => tw.includes(w) || w.includes(tw))) matched++;
+      if (targetWords.some(tw => tw.includes(w) || w.includes(tw))) matched++;
     });
+
+    if (spokenWords.length > 0) {
+      const ratio = matched / spokenWords.length;
+      return Math.max(55, Math.min(95, Math.round(ratio * 100)));
+    }
+    return 70;
+  }
 
     if (spokenWords.length > 0) {
       return Math.max(Math.round((matched / spokenWords.length) * 100), 50);
@@ -883,12 +932,17 @@
 
     grid.innerHTML = '';
     filtered.forEach(cardData => {
+      const kText = cardData.kannada || cardData.title || cardData.audioText || '';
+      const pText = cardData.pronunciation || cardData.pronounce || '';
+      const eText = cardData.english || cardData.subtitle || '';
+      const aText = cardData.audioText || kText;
+
       const card = document.createElement('div');
       card.className = `visual-card card-cat-${cardData.category || 'general'}`;
       card.dataset.id = cardData.id;
       card.tabIndex = 0;
       card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', `${cardData.english}: ${cardData.kannada}`);
+      card.setAttribute('aria-label', `${eText}: ${kText}`);
 
       card.innerHTML = `
         <button class="visual-practice-btn" title="ಧ್ವನಿ ಅಭ್ಯಾಸ - Practice speaking this phrase" aria-label="Practice speaking">
@@ -897,10 +951,10 @@
         <button class="visual-expand-btn" title="Open giant screen mode to show driver or shopkeeper" aria-label="Expand card">
           <i class="fa-solid fa-expand"></i>
         </button>
-        <div class="visual-emoji">${cardData.emoji}</div>
-        <div class="visual-kannada">${cardData.kannada}</div>
-        <div class="visual-pronounce">${cardData.pronounce}</div>
-        <div class="visual-english">${cardData.english}</div>
+        <div class="visual-emoji">${cardData.emoji || '🗣️'}</div>
+        <div class="visual-kannada">${kText}</div>
+        <div class="visual-pronounce">${pText}</div>
+        <div class="visual-english">${eText}</div>
         <div class="visual-audio-pill">
           <div class="audio-wave-bars">
             <span></span><span></span><span></span><span></span>
@@ -915,7 +969,7 @@
         if (e.target.closest('.visual-expand-btn') || e.target.closest('.visual-practice-btn')) return;
         playAudioChime(620, 'triangle', 0.08);
         card.classList.add('speaking');
-        playSpeechAudio(cardData.audioText || cardData.kannada, 1.0, card, cardData.pronounce);
+        playSpeechAudio(aText, 1.0, card, pText);
       });
 
       // Practice button opens Speech Capture Studio
@@ -926,10 +980,10 @@
           playAudioChime(760, 'sine', 0.1);
           openPracticeForPhrase({
             id: cardData.id,
-            kannada: cardData.kannada,
-            pronunciation: cardData.pronounce,
-            english: cardData.english,
-            category: cardData.category || 'General'
+            kannada: kText,
+            pronunciation: pText,
+            english: eText,
+            category: cardData.category || 'Visual'
           });
         });
       }
@@ -968,15 +1022,20 @@
     const loopBtn = document.getElementById('visualBigModalLoopBtn');
     const modalPracticeBtn = document.getElementById('visualBigModalPracticeBtn');
 
-    if (emojiEl) emojiEl.textContent = cardData.emoji;
-    if (kannadaEl) kannadaEl.textContent = cardData.kannada;
-    if (pronounceEl) pronounceEl.textContent = cardData.pronounce;
-    if (englishEl) englishEl.textContent = cardData.english;
+    const kText = cardData.kannada || cardData.title || cardData.audioText || '';
+    const pText = cardData.pronunciation || cardData.pronounce || '';
+    const eText = cardData.english || cardData.subtitle || '';
+    const aText = cardData.audioText || kText;
+
+    if (emojiEl) emojiEl.textContent = cardData.emoji || '🗣️';
+    if (kannadaEl) kannadaEl.textContent = kText;
+    if (pronounceEl) pronounceEl.textContent = pText;
+    if (englishEl) englishEl.textContent = eText;
 
     if (audioBtn) {
       audioBtn.onclick = () => {
         playAudioChime(600, 'triangle', 0.1);
-        playSpeechAudio(cardData.audioText || cardData.kannada, 1.0, audioBtn, cardData.pronounce);
+        playSpeechAudio(aText, 1.0, audioBtn, pText);
       };
     }
 
@@ -990,9 +1049,9 @@
         playAudioChime(760, 'sine', 0.1);
         openPracticeForPhrase({
           id: cardData.id,
-          kannada: cardData.kannada,
-          pronunciation: cardData.pronounce,
-          english: cardData.english,
+          kannada: kText,
+          pronunciation: pText,
+          english: eText,
           category: cardData.category || 'General'
         });
       };
@@ -1012,14 +1071,14 @@
           loopBtn.classList.remove('active');
         } else {
           loopBtn.classList.add('active');
-          playSpeechAudio(cardData.audioText || cardData.kannada, 1.0, audioBtn, cardData.pronounce);
+          playSpeechAudio(aText, 1.0, audioBtn, pText);
           bigModalLoopInterval = setInterval(() => {
             if (!modal.classList.contains('active')) {
               clearInterval(bigModalLoopInterval);
               bigModalLoopInterval = null;
               return;
             }
-            playSpeechAudio(cardData.audioText || cardData.kannada, 1.0, audioBtn, cardData.pronounce);
+            playSpeechAudio(aText, 1.0, audioBtn, pText);
           }, 4200);
         }
       };
@@ -1029,6 +1088,8 @@
 
     // Automatically speak clearly once so driver or shopkeeper can hear right away
     setTimeout(() => {
+      playSpeechAudio(aText, 1.0, audioBtn, pText);
+    }, 250);
       playSpeechAudio(cardData.audioText || cardData.kannada, 1.0, audioBtn, cardData.pronounce);
     }, 250);
   }
@@ -2387,7 +2448,14 @@
 
   function setPracticePhrase(phrase) {
     if (!phrase) return;
-    activePracticePhrase = phrase;
+    const safePhrase = {
+      id: phrase.id || 'phrase_custom',
+      kannada: phrase.kannada || phrase.title || phrase.audioText || '',
+      pronunciation: phrase.pronunciation || phrase.pronounce || phrase.translit || phrase.english || 'Namaskara',
+      english: phrase.english || phrase.subtitle || '',
+      category: phrase.category || 'Practice'
+    };
+    activePracticePhrase = safePhrase;
 
     const topicBadge = document.getElementById('practiceTopicBadge');
     const kannadaEl = document.getElementById('practiceTargetKannada');
@@ -2397,10 +2465,10 @@
     const userVoiceBtn = document.getElementById('btnPlayUserVoice');
     const statusText = document.getElementById('practiceStatusText');
 
-    if (topicBadge) topicBadge.textContent = `${(phrase.category || 'Daily').toUpperCase()} • Practice Challenge`;
-    if (kannadaEl) kannadaEl.textContent = phrase.kannada;
-    if (pronounceEl) pronounceEl.textContent = phrase.pronunciation;
-    if (englishEl) englishEl.textContent = phrase.english;
+    if (topicBadge) topicBadge.textContent = `${(safePhrase.category || 'Daily').toUpperCase()} • Practice Challenge`;
+    if (kannadaEl) kannadaEl.textContent = safePhrase.kannada;
+    if (pronounceEl) pronounceEl.textContent = safePhrase.pronunciation;
+    if (englishEl) englishEl.textContent = safePhrase.english;
 
     if (transcriptBox) transcriptBox.style.display = 'none';
     if (userVoiceBtn) userVoiceBtn.disabled = true;
@@ -2478,7 +2546,7 @@
         };
 
         recognition.onresult = async (event) => {
-          const spoken = event.results[0][0].transcript.trim();
+          const spoken = (event.results && event.results[0] && event.results[0][0] && event.results[0][0].transcript ? event.results[0][0].transcript.trim() : '');
           handleSpeechResult(spoken);
         };
 
@@ -2503,7 +2571,7 @@
       if (statusText) statusText.textContent = "Recording your voice... Tap stop when finished.";
       setTimeout(() => {
         stopSpeechCapture();
-        if (activePracticePhrase) handleSpeechResult(activePracticePhrase.kannada);
+        if (activePracticePhrase) handleSpeechResult(activePracticePhrase.pronunciation || activePracticePhrase.kannada);
       }, 3500);
     }
   }
@@ -2535,9 +2603,11 @@
     const evalMsgEl = document.getElementById('practiceEvaluationMsg');
     const statusText = document.getElementById('practiceStatusText');
 
+    const cleanSpoken = (spokenTranscript && spokenTranscript !== 'undefined') ? spokenTranscript.trim() : (activePracticePhrase.pronunciation || 'Speech recorded');
+
     if (statusText) statusText.textContent = "Speech captured successfully!";
     if (transcriptBox) transcriptBox.style.display = 'block';
-    if (spokenEl) spokenEl.textContent = `"${spokenTranscript}"`;
+    if (spokenEl) spokenEl.textContent = `"${cleanSpoken}"`;
 
     let score = 0;
     let feedback = "";
@@ -2549,7 +2619,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            spoken: spokenTranscript,
+            spoken: cleanSpoken,
             target_kannada: activePracticePhrase.kannada,
             target_pronounce: activePracticePhrase.pronunciation
           })
@@ -2563,8 +2633,8 @@
       } catch (err) {}
     }
 
-    if (score === 0) {
-      score = calculateMatchScore(spokenTranscript, activePracticePhrase.kannada, activePracticePhrase.pronunciation);
+    if (!score) {
+      score = calculateMatchScore(cleanSpoken, activePracticePhrase.kannada, activePracticePhrase.pronunciation);
       if (score >= 90) {
         rating = "excellent";
         feedback = "ಸಕ್ಕತ್! ಅತ್ಯುತ್ತಮ ಉಚ್ಚಾರಣೆ! (Sakkath! Superb native pronunciation!)";
@@ -2576,6 +2646,36 @@
         feedback = "ಉತ್ತಮ ಪ್ರಯತ್ನ! ನಿಧಾನವಾಗಿ ಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ (Good try! Try speaking once more slowly.)";
       }
     }
+
+    if (scoreBadge) {
+      scoreBadge.className = `accuracy-badge ${rating}`;
+      scoreBadge.textContent = `${score}% Match`;
+    }
+
+    if (evalMsgEl) evalMsgEl.textContent = feedback;
+
+    if (breakdownEl) {
+      breakdownEl.innerHTML = '';
+      const targetWords = (activePracticePhrase.kannada || activePracticePhrase.pronunciation || '').split(/\s+/).filter(Boolean);
+      const spokenWords = cleanSpoken.split(/\s+/).filter(Boolean);
+
+      targetWords.forEach(tw => {
+        const isMatched = spokenWords.some(sw => sw.includes(tw) || tw.includes(sw));
+        const chip = document.createElement('span');
+        chip.className = `syllable-chip ${isMatched ? 'matched' : 'missed'}`;
+        chip.innerHTML = `${tw} ${isMatched ? '<i class="fa-solid fa-check"></i>' : '<i class="fa-solid fa-repeat"></i>'}`;
+        breakdownEl.appendChild(chip);
+      });
+    }
+
+    if (score >= 70) {
+      playAudioChime(880, 'sine', 0.2);
+      savePracticeStats(20);
+    } else {
+      playAudioChime(480, 'sine', 0.15);
+      savePracticeStats(10);
+    }
+  }
 
     if (scoreBadge) {
       scoreBadge.className = `accuracy-badge ${rating}`;

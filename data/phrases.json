@@ -261,112 +261,156 @@
     {
       "num": 1,
       "kannada": "ಒಂದು",
-      "pronounce": "Ondu"
+      "pronounce": "Ondu",
+      "pronunciation": "Ondu",
+      "english": "Number 1"
     },
     {
       "num": 2,
       "kannada": "ಎರಡು",
-      "pronounce": "Eradu"
+      "pronounce": "Eradu",
+      "pronunciation": "Eradu",
+      "english": "Number 2"
     },
     {
       "num": 3,
       "kannada": "ಮೂರು",
-      "pronounce": "Mooru"
+      "pronounce": "Mooru",
+      "pronunciation": "Mooru",
+      "english": "Number 3"
     },
     {
       "num": 4,
       "kannada": "ನಾಲ್ಕು",
-      "pronounce": "Naalku"
+      "pronounce": "Naalku",
+      "pronunciation": "Naalku",
+      "english": "Number 4"
     },
     {
       "num": 5,
       "kannada": "ಐದು",
-      "pronounce": "Aidu"
+      "pronounce": "Aidu",
+      "pronunciation": "Aidu",
+      "english": "Number 5"
     },
     {
       "num": 6,
       "kannada": "ಆರು",
-      "pronounce": "Aaru"
+      "pronounce": "Aaru",
+      "pronunciation": "Aaru",
+      "english": "Number 6"
     },
     {
       "num": 7,
       "kannada": "ಏಳು",
-      "pronounce": "Elu"
+      "pronounce": "Elu",
+      "pronunciation": "Elu",
+      "english": "Number 7"
     },
     {
       "num": 8,
       "kannada": "ಎಂಟು",
-      "pronounce": "Entu"
+      "pronounce": "Entu",
+      "pronunciation": "Entu",
+      "english": "Number 8"
     },
     {
       "num": 9,
       "kannada": "ಒಂಬತ್ತು",
-      "pronounce": "Ombhatthu"
+      "pronounce": "Ombhatthu",
+      "pronunciation": "Ombhatthu",
+      "english": "Number 9"
     },
     {
       "num": 10,
       "kannada": "ಹತ್ತು",
-      "pronounce": "Hatthu"
+      "pronounce": "Hatthu",
+      "pronunciation": "Hatthu",
+      "english": "Number 10"
     },
     {
       "num": 15,
       "kannada": "ಹದಿನೈದು",
-      "pronounce": "Hadinaidu"
+      "pronounce": "Hadinaidu",
+      "pronunciation": "Hadinaidu",
+      "english": "Number 15"
     },
     {
       "num": 20,
       "kannada": "ಇಪ್ಪತ್ತು",
-      "pronounce": "Ippatthu"
+      "pronounce": "Ippatthu",
+      "pronunciation": "Ippatthu",
+      "english": "Number 20"
     },
     {
       "num": 30,
       "kannada": "ಮೂವತ್ತು",
-      "pronounce": "Moovatthu"
+      "pronounce": "Moovatthu",
+      "pronunciation": "Moovatthu",
+      "english": "Number 30"
     },
     {
       "num": 40,
       "kannada": "ನಲವತ್ತು",
-      "pronounce": "Nalavatthu"
+      "pronounce": "Nalavatthu",
+      "pronunciation": "Nalavatthu",
+      "english": "Number 40"
     },
     {
       "num": 50,
       "kannada": "ಐವತ್ತು",
-      "pronounce": "Aivatthu"
+      "pronounce": "Aivatthu",
+      "pronunciation": "Aivatthu",
+      "english": "Number 50"
     },
     {
       "num": 60,
       "kannada": "ಅರವತ್ತು",
-      "pronounce": "Aravatthu"
+      "pronounce": "Aravatthu",
+      "pronunciation": "Aravatthu",
+      "english": "Number 60"
     },
     {
       "num": 70,
       "kannada": "ಎಪ್ಪತ್ತು",
-      "pronounce": "Eppatthu"
+      "pronounce": "Eppatthu",
+      "pronunciation": "Eppatthu",
+      "english": "Number 70"
     },
     {
       "num": 80,
       "kannada": "ಎಂಬತ್ತು",
-      "pronounce": "Embatthu"
+      "pronounce": "Embatthu",
+      "pronunciation": "Embatthu",
+      "english": "Number 80"
     },
     {
       "num": 90,
       "kannada": "ತೊಂಬತ್ತು",
-      "pronounce": "Tombatthu"
+      "pronounce": "Tombatthu",
+      "pronunciation": "Tombatthu",
+      "english": "Number 90"
     },
     {
       "num": 100,
       "kannada": "ನೂರು",
-      "pronounce": "Nooru"
+      "pronounce": "Nooru",
+      "pronunciation": "Nooru",
+      "english": "Number 100"
     },
     {
       "num": 500,
       "kannada": "ಐನೂರು",
-      "pronounce": "Ainooru"
+      "pronounce": "Ainooru",
+      "pronunciation": "Ainooru",
+      "english": "Number 500"
     },
     {
       "num": 1000,
       "kannada": "ಸಾವಿರ",
-      "pronounce": "Saavira"
+      "pronounce": "Saavira",
+      "pronunciation": "Saavira",
+      "english": "Number 1000"
     }
   ],
   "magicWords": [
@@ -374,103 +418,139 @@
       "word": "ಹೌದು",
       "pronounce": "Haudu",
       "english": "Yes",
-      "tip": "Universal affirmation."
+      "tip": "Universal affirmation.",
+      "kannada": "ಹೌದು",
+      "pronunciation": "Haudu"
     },
     {
       "word": "ಇಲ್ಲ",
       "pronounce": "Illa",
       "english": "No / Not there",
-      "tip": "Universal negation."
+      "tip": "Universal negation.",
+      "kannada": "ಇಲ್ಲ",
+      "pronunciation": "Illa"
     },
     {
       "word": "ಬೇಕು",
       "pronounce": "Beku",
       "english": "Want / Need",
-      "tip": "Use when asking for anything: 'Coffee beku'."
+      "tip": "Use when asking for anything: 'Coffee beku'.",
+      "kannada": "ಬೇಕು",
+      "pronunciation": "Beku"
     },
     {
       "word": "ಬೇಡ",
       "pronounce": "Beda",
       "english": "Don't want",
-      "tip": "Polite refusal: 'Beda, dhanyavaada'."
+      "tip": "Polite refusal: 'Beda, dhanyavaada'.",
+      "kannada": "ಬೇಡ",
+      "pronunciation": "Beda"
     },
     {
       "word": "ಎಷ್ಟು?",
       "pronounce": "Eshtu?",
       "english": "How much?",
-      "tip": "Use for price, time, or quantity."
+      "tip": "Use for price, time, or quantity.",
+      "kannada": "ಎಷ್ಟು?",
+      "pronunciation": "Eshtu?"
     },
     {
       "word": "ಎಲ್ಲಿದೆ?",
       "pronounce": "Ellide?",
       "english": "Where is it?",
-      "tip": "Add after any place: 'Bus stand ellide?'"
+      "tip": "Add after any place: 'Bus stand ellide?'",
+      "kannada": "ಎಲ್ಲಿದೆ?",
+      "pronunciation": "Ellide?"
     },
     {
       "word": "ಸ್ವಲ್ಪ",
       "pronounce": "Swalpa",
       "english": "A little bit",
-      "tip": "Softens every request: 'Swalpa side bidi'."
+      "tip": "Softens every request: 'Swalpa side bidi'.",
+      "kannada": "ಸ್ವಲ್ಪ",
+      "pronunciation": "Swalpa"
     },
     {
       "word": "ದಯವಿಟ್ಟು",
       "pronounce": "Dayavittu",
       "english": "Please",
-      "tip": "Highest form of courteous appeal."
+      "tip": "Highest form of courteous appeal.",
+      "kannada": "ದಯವಿಟ್ಟು",
+      "pronunciation": "Dayavittu"
     },
     {
       "word": "ಧನ್ಯವಾದಗಳು",
       "pronounce": "Dhanyavaadagalu",
       "english": "Thank you",
-      "tip": "Formal and polite gratitude."
+      "tip": "Formal and polite gratitude.",
+      "kannada": "ಧನ್ಯವಾದಗಳು",
+      "pronunciation": "Dhanyavaadagalu"
     },
     {
       "word": "ಗೊತ್ತಿಲ್ಲ",
       "pronounce": "Gottilla",
       "english": "I don't know",
-      "tip": "Useful when someone asks you something."
+      "tip": "Useful when someone asks you something.",
+      "kannada": "ಗೊತ್ತಿಲ್ಲ",
+      "pronunciation": "Gottilla"
     }
   ],
   "slang": [
     {
       "term": "ಗುರು (Guru)",
       "meaning": "Buddy, friend, or bro (used casually between peers)",
-      "example": "ಏನ್ ಸಮಾಚಾರ ಗುರು? (En samaachara guru? - What's up buddy?)"
+      "example": "ಏನ್ ಸಮಾಚಾರ ಗುರು? (En samaachara guru? - What's up buddy?)",
+      "kannada": "ಗುರು",
+      "pronunciation": "Guru"
     },
     {
       "term": "ಮಚ್ಚಾ (Macha)",
       "meaning": "Close pal / bro (Bangalore youth slang)",
-      "example": "ಮಚ್ಚಾ, ಕಾಫಿ ಕುಡಿಯೋಣ ಬಾ! (Macha, coffee kudiyona baa!)"
+      "example": "ಮಚ್ಚಾ, ಕಾಫಿ ಕುಡಿಯೋಣ ಬಾ! (Macha, coffee kudiyona baa!)",
+      "kannada": "ಮಚ್ಚಾ",
+      "pronunciation": "Macha"
     },
     {
       "term": "ಸಕ್ಕತ್ (Sakkath)",
       "meaning": "Awesome, super, amazing",
-      "example": "ಈ ದೋಸೆ ಸಕ್ಕತ್ ಆಗಿದೆ! (Ee dose sakkath aagide! - This dosa is awesome!)"
+      "example": "ಈ ದೋಸೆ ಸಕ್ಕತ್ ಆಗಿದೆ! (Ee dose sakkath aagide! - This dosa is awesome!)",
+      "kannada": "ಸಕ್ಕತ್",
+      "pronunciation": "Sakkath"
     },
     {
       "term": "ಬೊಂಬಾಟ್ (Bombat)",
       "meaning": "Fantastic / top class quality",
-      "example": "ಊಟ ಬೊಂಬಾಟ್ ಗುರು! (Oota bombat guru! - The food is fantastic!)"
+      "example": "ಊಟ ಬೊಂಬಾಟ್ ಗುರು! (Oota bombat guru! - The food is fantastic!)",
+      "kannada": "ಬೊಂಬಾಟ್",
+      "pronunciation": "Bombat"
     },
     {
       "term": "ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ (Adjust Maadi)",
       "meaning": "Please cooperate / adjust a little (The golden Bangalore phrase)",
-      "example": "ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ ಅಣ್ಣ (Swalpa adjust maadi anna)"
+      "example": "ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ ಅಣ್ಣ (Swalpa adjust maadi anna)",
+      "kannada": "ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ",
+      "pronunciation": "Adjust Maadi"
     },
     {
       "term": "ಸೀನ್ ಇಲ್ಲ (Scene Illa)",
       "meaning": "No problem / chill / don't worry",
-      "example": "ಏನೂ ತೊಂದರೆ ಇಲ್ಲ, ಸೀನ್ ಇಲ್ಲ ಬಿಡಿ! (Scene illa bidi!)"
+      "example": "ಏನೂ ತೊಂದರೆ ಇಲ್ಲ, ಸೀನ್ ಇಲ್ಲ ಬಿಡಿ! (Scene illa bidi!)",
+      "kannada": "ಸೀನ್ ಇಲ್ಲ",
+      "pronunciation": "Scene Illa"
     },
     {
       "term": "ಸ್ವಾಮಿ (Swamy)",
       "meaning": "Respectful address for strangers, shopkeepers, or drivers",
-      "example": "ಬನ್ನಿ ಸ್ವಾಮಿ, ಕೂತ್ಕೊಳ್ಳಿ (Banni swamy, kootkolli)"
+      "example": "ಬನ್ನಿ ಸ್ವಾಮಿ, ಕೂತ್ಕೊಳ್ಳಿ (Banni swamy, kootkolli)",
+      "kannada": "ಸ್ವಾಮಿ",
+      "pronunciation": "Swamy"
     },
     {
       "term": "ಅಣ್ಣ / ಅಕ್ಕ (Anna / Akka)",
       "meaning": "Elder brother / Elder sister (essential friendly honorific)",
-      "example": "ಮೀಟರ್ ಹಾಕಿ ಅಣ್ಣ (Meter haaki anna)"
+      "example": "ಮೀಟರ್ ಹಾಕಿ ಅಣ್ಣ (Meter haaki anna)",
+      "kannada": "ಅಣ್ಣ / ಅಕ್ಕ",
+      "pronunciation": "Anna / Akka"
     }
   ],
   "builderVocabulary": {
@@ -1679,7 +1759,9 @@
       "pronounce": "Meter prakaara banni anna",
       "english": "Please come by meter, brother",
       "color": "#f59e0b",
-      "category": "travel"
+      "category": "travel",
+      "kannada": "ಮೀಟರ್ ಹಾಕಿ",
+      "pronunciation": "Meter prakaara banni anna"
     },
     {
       "id": "vis_bus",
@@ -1691,7 +1773,9 @@
       "pronounce": "Ee bus Majestic ge hogutthaa?",
       "english": "Does this bus go to Majestic?",
       "color": "#f59e0b",
-      "category": "travel"
+      "category": "travel",
+      "kannada": "ಮೆಜೆಸ್ಟಿಕ್ ಬಸ್",
+      "pronunciation": "Ee bus Majestic ge hogutthaa?"
     },
     {
       "id": "vis_stop",
@@ -1703,7 +1787,9 @@
       "pronounce": "Illi nillisi anna, naanu iliyabeku",
       "english": "Stop here brother, I need to get down",
       "color": "#ef4444",
-      "category": "travel"
+      "category": "travel",
+      "kannada": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
+      "pronunciation": "Illi nillisi anna, naanu iliyabeku"
     },
     {
       "id": "vis_coffee",
@@ -1715,7 +1801,9 @@
       "pronounce": "Ondu filter coffee kodi",
       "english": "One filter coffee please",
       "color": "#f97316",
-      "category": "food"
+      "category": "food",
+      "kannada": "ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "pronunciation": "Ondu filter coffee kodi"
     },
     {
       "id": "vis_dosa",
@@ -1727,7 +1815,9 @@
       "pronounce": "Ondu masale dose kodi",
       "english": "One masala dosa please",
       "color": "#f97316",
-      "category": "food"
+      "category": "food",
+      "kannada": "ಮಸಾಲೆ ದೋಸೆ",
+      "pronunciation": "Ondu masale dose kodi"
     },
     {
       "id": "vis_water",
@@ -1739,7 +1829,9 @@
       "pronounce": "Kudiyuva bisi neeru kodi",
       "english": "Please give drinking water",
       "color": "#06b6d4",
-      "category": "food"
+      "category": "food",
+      "kannada": "ಕುಡಿಯುವ ನೀರು",
+      "pronunciation": "Kudiyuva bisi neeru kodi"
     },
     {
       "id": "vis_price",
@@ -1751,7 +1843,9 @@
       "pronounce": "Idu eshtu rupaayi anna?",
       "english": "How much rupees is this?",
       "color": "#10b981",
-      "category": "shopping"
+      "category": "shopping",
+      "kannada": "ಎಷ್ಟು ರೂಪಾಯಿ?",
+      "pronunciation": "Idu eshtu rupaayi anna?"
     },
     {
       "id": "vis_upi",
@@ -1763,7 +1857,9 @@
       "pronounce": "PhonePe athava Google Pay tagotheera?",
       "english": "Do you accept PhonePe / Google Pay?",
       "color": "#3b82f6",
-      "category": "shopping"
+      "category": "shopping",
+      "kannada": "PhonePe / GPay",
+      "pronunciation": "PhonePe athava Google Pay tagotheera?"
     },
     {
       "id": "vis_bargain",
@@ -1775,7 +1871,9 @@
       "pronounce": "Swalpa kammi maadi anna",
       "english": "Please reduce price a little, brother",
       "color": "#10b981",
-      "category": "shopping"
+      "category": "shopping",
+      "kannada": "ಕಮ್ಮಿ ಮಾಡಿ",
+      "pronunciation": "Swalpa kammi maadi anna"
     },
     {
       "id": "vis_hospital",
@@ -1787,7 +1885,9 @@
       "pronounce": "Hatthirada aaspatre ellide?",
       "english": "Where is the nearest hospital?",
       "color": "#ef4444",
-      "category": "healthcare"
+      "category": "healthcare",
+      "kannada": "ಆಸ್ಪತ್ರೆ ಎಲ್ಲಿದೆ?",
+      "pronunciation": "Hatthirada aaspatre ellide?"
     },
     {
       "id": "vis_medicine",
@@ -1799,7 +1899,9 @@
       "pronounce": "Jvara matte talenovu ide, maatre kodi",
       "english": "I have fever and headache, give medicine",
       "color": "#ec4899",
-      "category": "healthcare"
+      "category": "healthcare",
+      "kannada": "ಜ್ವರದ ಮಾತ್ರೆ",
+      "pronunciation": "Jvara matte talenovu ide, maatre kodi"
     },
     {
       "id": "vis_washroom",
@@ -1811,7 +1913,9 @@
       "pronounce": "Shouchalaya athava washroom ellide?",
       "english": "Where is the washroom / toilet?",
       "color": "#06b6d4",
-      "category": "quickhelp"
+      "category": "quickhelp",
+      "kannada": "ಶೌಚಾಲಯ",
+      "pronunciation": "Shouchalaya athava washroom ellide?"
     },
     {
       "id": "vis_sos",
@@ -1823,7 +1927,9 @@
       "pronounce": "Dayavittu sahaaya maadi! Nanage tondare aagide!",
       "english": "Please help me! I am in emergency trouble!",
       "color": "#f43f5e",
-      "category": "quickhelp"
+      "category": "quickhelp",
+      "kannada": "ತುರ್ತು ಸಹಾಯ!",
+      "pronunciation": "Dayavittu sahaaya maadi! Nanage tondare aagide!"
     },
     {
       "id": "vis_police",
@@ -1835,7 +1941,9 @@
       "pronounce": "Police-rige 112 phone maadi, thurtu ide",
       "english": "Please call 112 police, it is urgent",
       "color": "#3b82f6",
-      "category": "quickhelp"
+      "category": "quickhelp",
+      "kannada": "ಪೊಲೀಸ್ (112)",
+      "pronunciation": "Police-rige 112 phone maadi, thurtu ide"
     },
     {
       "id": "vis_ambulance",
@@ -1847,7 +1955,9 @@
       "pronounce": "Bega ambulance-ge 108 kare maadi",
       "english": "Please call 108 ambulance quickly",
       "color": "#ef4444",
-      "category": "quickhelp"
+      "category": "quickhelp",
+      "kannada": "ಅಂಬ್ಯುಲೆನ್ಸ್ (108)",
+      "pronunciation": "Bega ambulance-ge 108 kare maadi"
     },
     {
       "id": "vis_yes",
@@ -1859,7 +1969,9 @@
       "pronounce": "Haudu, sari anna",
       "english": "Yes, alright brother",
       "color": "#10b981",
-      "category": "social"
+      "category": "social",
+      "kannada": "ಹೌದು / ಸರಿ",
+      "pronunciation": "Haudu, sari anna"
     },
     {
       "id": "vis_no",
@@ -1871,7 +1983,9 @@
       "pronounce": "Beda anna, beda",
       "english": "No brother, I dont want",
       "color": "#ef4444",
-      "category": "social"
+      "category": "social",
+      "kannada": "ಬೇಡ / ಇಲ್ಲ",
+      "pronunciation": "Beda anna, beda"
     },
     {
       "id": "vis_thanks",
@@ -1883,7 +1997,9 @@
       "pronounce": "Tumba dhanyavaadagalu anna!",
       "english": "Thank you very much brother!",
       "color": "#8b5cf6",
-      "category": "social"
+      "category": "social",
+      "kannada": "ಧನ್ಯವಾದಗಳು",
+      "pronunciation": "Tumba dhanyavaadagalu anna!"
     }
   ]
 }
